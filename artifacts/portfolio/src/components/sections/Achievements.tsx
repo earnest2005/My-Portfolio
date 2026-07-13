@@ -1,7 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { fadeIn, staggerContainer } from "@/lib/animations";
-import { Trophy, Code2, Users, Star } from "lucide-react";
+import { Trophy, Code2, Users, Star, ExternalLink } from "lucide-react";
+import certAcm from "@assets/0_ACM_1783965306486.pdf";
 
 function Counter({ end, suffix = "", prefix = "" }: { end: number, suffix?: string, prefix?: string }) {
   const [count, setCount] = useState(0);
@@ -83,7 +84,15 @@ export default function Achievements() {
               <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
               <div>
                 <h4 className="font-bold text-lg">Prize Winner — Engineer's Day 2025 Idea Presentation</h4>
-                <p className="text-muted-foreground text-sm">Awarded a Certificate of Achievement by ACM, ACM-W, and St. Xavier's Catholic College of Engineering for securing a prize in the idea presentation competition.</p>
+                <p className="text-muted-foreground text-sm mb-2">Awarded a Certificate of Achievement by ACM, ACM-W, and St. Xavier's Catholic College of Engineering for securing a prize in the idea presentation competition.</p>
+                <a
+                  href={certAcm}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs font-medium text-primary inline-flex items-center gap-1 hover:underline"
+                >
+                  Verify <ExternalLink size={12} />
+                </a>
               </div>
             </li>
             <li className="flex items-start gap-4">

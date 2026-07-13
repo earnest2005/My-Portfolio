@@ -1,57 +1,76 @@
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import { Award, ExternalLink, Calendar } from "lucide-react";
+import certCTraining from "@assets/0_C_program_online_1783965316785.pdf";
+import certIEEE from "@assets/1_Certificate_IEEE_Xplore_1783965316787.pdf";
+import certDigitalProductivity from "@assets/2_Digital_Productivity_1783965316789.pdf";
+import certDreamKK from "@assets/3_Dream_KK_1783965316790.pdf";
+import certGermanA1 from "@assets/4_German_A1_1783965316792.pdf";
+import certHackfest from "@assets/5_Hackfest_1783965316795.pdf";
+import certAkInternship from "@assets/6_Internship_3rd_sem_1783965316797.pdf";
+import certNeurax from "@assets/7_Neurax_1783965316799.pdf";
+import certWhiteAuraXInternship from "@assets/8_White_AuraX_Internship_1783965316801.pdf";
 
 const certifications = [
   {
     title: "Completion of C Training",
     issuer: "Spoken Tutorial (IIT Bombay) & EduPyramids",
     date: "2026",
+    file: certCTraining,
   },
   {
     title: "Participation — IEEE Xplore Webinar",
     issuer: "EBSCO Information Services India & St. Xavier's Catholic College of Engineering",
     date: "2026",
+    file: certIEEE,
   },
   {
     title: "Digital Productivity with AI",
     issuer: "Passport to Earning (P2E) Skills, with UNICEF & YuWaah!",
     date: "2025",
+    file: certDigitalProductivity,
   },
   {
     title: "Idea/Poster Presentation — Dream Kanyakumari 2026",
     issuer: "StartupTN & Nocrul Islam Centre For Higher Education (NICHE)",
     date: "2026",
+    file: certDreamKK,
   },
   {
     title: "German Language Course — Level A1",
     issuer: "Bryan's Academy, Nagercoil & St. Xavier's Catholic College of Engineering",
     date: "2025",
+    file: certGermanA1,
   },
   {
     title: "HackFest'2026 — Intra-College Hackathon",
     issuer: "Hackathon Cell, St. Xavier's Catholic College of Engineering",
     date: "2026",
+    file: certHackfest,
   },
   {
     title: "Internship — Mobile App Development",
     issuer: "AK Infopark",
     date: "2025",
+    file: certAkInternship,
   },
   {
     title: "NeuraX'26 — 8-Hour Intra-College Hackathon",
     issuer: "Hackathon Cell, St. Xavier's Catholic College of Engineering",
     date: "2026",
+    file: certNeurax,
   },
   {
     title: "Internship — Java Development",
     issuer: "White AuraX OPC PVT LTD",
     date: "2026",
+    file: certWhiteAuraXInternship,
   },
   {
     title: "AI for Beginners",
     issuer: "HP LIFE",
     date: "2026",
+    file: null,
   }
 ];
 
@@ -94,9 +113,16 @@ export default function Certifications() {
                   <div className="flex items-center gap-1 text-xs text-muted-foreground">
                     <Calendar size={12} /> {cert.date}
                   </div>
-                  <a href="#" className="text-xs font-medium text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                    Verify <ExternalLink size={12} />
-                  </a>
+                  {cert.file ? (
+                    <a
+                      href={cert.file}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs font-medium text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      Verify <ExternalLink size={12} />
+                    </a>
+                  ) : null}
                 </div>
               </div>
             </motion.div>
