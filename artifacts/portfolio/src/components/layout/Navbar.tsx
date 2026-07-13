@@ -50,7 +50,7 @@ export default function Navbar() {
           <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white text-sm">
             AE
           </div>
-          <span>Alex<span className="text-muted-foreground">.dev</span></span>
+          <span>Earnest<span className="text-muted-foreground">.dev</span></span>
         </a>
 
         {/* Desktop Nav */}

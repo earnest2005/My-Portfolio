@@ -8,7 +8,7 @@ const roles = [
   "AI & Data Science Student",
   "Java Developer",
   "React Developer",
-  "Data Analytics Enthusiast"
+  "Java & React Developer"
 ];
 
 export default function Hero() {
@@ -58,7 +58,7 @@ export default function Hero() {
             </motion.div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-6 text-foreground leading-[1.1]">
-              Hi, I'm <span className="text-gradient">Alex Evens</span>
+              Hi, I'm <span className="text-gradient">Earnest Abraham</span>
               <br />
               <span className="text-3xl sm:text-4xl lg:text-5xl mt-4 block h-[60px] text-muted-foreground font-semibold">
                 <AnimatePresence mode="wait">
@@ -124,7 +124,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-grid-black/[0.1] dark:bg-grid-white/[0.1] bg-[size:16px_16px]" />
                 <img 
                   src={profileImg} 
-                  alt="Alex Evens" 
+                  alt="Earnest Abraham E A" 
                   className="w-full h-full object-cover relative z-10"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';

@@ -14,7 +14,7 @@ export default function Footer() {
             <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white text-[10px]">
               AE
             </div>
-            <span>Alex<span className="text-muted-foreground">.dev</span></span>
+            <span>Earnest<span className="text-muted-foreground">.dev</span></span>
           </div>
           <p className="text-sm text-muted-foreground">
             Crafting intelligent solutions & elegant interfaces.

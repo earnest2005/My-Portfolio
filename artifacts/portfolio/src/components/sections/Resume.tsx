@@ -34,7 +34,7 @@ export default function ResumeSection() {
               <FileText size={32} />
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-2">Alex_Evens_Resume.pdf</h3>
+              <h3 className="text-2xl font-bold mb-2">Earnest_Abraham_Resume.pdf</h3>
               <p className="text-muted-foreground text-sm">Updated August 2023 • 124 KB • 1 Page</p>
             </div>
           </div>
