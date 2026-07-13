@@ -1,0 +1,449 @@
+You are an expert React, UI/UX, and frontend engineer. Create a world-class personal portfolio website that looks like it belongs to a software engineer at a top tech company. The design should be modern, elegant, minimal, and highly interactive while maintaining excellent performance and accessibility.
+
+========================
+TECH STACK
+========================
+
+Build using:
+
+• React 19
+• Vite
+• Tailwind CSS
+• Framer Motion
+• React Icons
+• Lucide React
+• React Router (if needed)
+• EmailJS for contact form
+• Responsive Design
+• Dark/Light Theme
+• SEO Optimized
+
+The code should be modular, reusable, and production-ready.
+
+========================
+DESIGN STYLE
+========================
+
+Theme:
+Modern + Premium + Minimal
+
+Use:
+
+• Glassmorphism
+• Soft shadows
+• Smooth gradients
+• Floating elements
+• Rounded corners
+• Premium typography
+• Blur effects
+• Beautiful spacing
+• Elegant animations
+• Interactive hover effects
+• Scroll animations
+• Mouse glow effect
+• Gradient borders
+• Animated background particles
+• Loading animation
+
+Make it feel like an Apple + Stripe + Linear + Vercel inspired website.
+
+Everything must look polished.
+
+========================
+COLOR PALETTE
+========================
+
+Primary:
+#3B82F6
+
+Secondary:
+#8B5CF6
+
+Accent:
+#06B6D4
+
+Background:
+Dark navy with beautiful gradients.
+
+Provide both Dark Mode and Light Mode.
+
+========================
+TYPOGRAPHY
+========================
+
+Use modern Google Fonts.
+
+Large bold headings.
+
+Readable paragraphs.
+
+Excellent hierarchy.
+
+========================
+SECTIONS
+========================
+
+1. Hero
+
+Full-screen.
+
+Professional introduction.
+
+Animated text:
+
+• AI & Data Science Student
+• Java Developer
+• React Developer
+• Data Analytics Enthusiast
+
+Buttons:
+
+• View Projects
+• Download Resume
+• Contact Me
+
+Social icons:
+
+GitHub
+LinkedIn
+Email
+
+Animated profile image placeholder.
+
+Background animation.
+
+========================
+2. About Me
+========================
+
+Professional introduction.
+
+Include:
+
+Education
+
+Career objective
+
+Passion
+
+Interests
+
+Strengths
+
+Soft Skills
+
+Languages
+
+Animated cards.
+
+========================
+3. Skills
+========================
+
+Create beautiful animated skill cards.
+
+Categories:
+
+Programming
+- Java
+- Python
+- JavaScript
+- SQL
+
+Frontend
+- HTML
+- CSS
+- React
+- Tailwind
+
+Backend
+- Firebase
+- REST APIs
+
+Data Analytics
+- Power BI
+- Excel
+- NumPy
+- Pandas
+- Matplotlib
+
+Tools
+- Git
+- GitHub
+- VS Code
+- Cursor AI
+- Replit
+
+Each card should animate while scrolling.
+
+========================
+4. Experience
+========================
+
+Beautiful timeline.
+
+Include placeholders.
+
+Internship
+
+Projects
+
+Training
+
+Workshops
+
+========================
+5. Featured Projects
+========================
+
+Create premium project cards.
+
+Each project should contain:
+
+Large screenshot placeholder
+
+Technology badges
+
+Description
+
+Key Features
+
+Challenges
+
+Learning
+
+GitHub Button
+
+Live Demo Button
+
+Featured Projects:
+
+1. Elite Men's Wear Billing System
+
+React
+
+Firebase
+
+Inventory
+
+Billing
+
+Customer Management
+
+GST
+
+User Management
+
+2. Loan Management System
+
+Core Java
+
+OOP
+
+Collections
+
+Exception Handling
+
+3. Data Analytics Dashboard
+
+Power BI
+
+SQL
+
+Excel
+
+Python
+
+4. Portfolio Website
+
+React
+
+Tailwind
+
+Framer Motion
+
+========================
+6. Certifications
+========================
+
+Elegant certificate cards.
+
+Hover animation.
+
+========================
+7. Education
+========================
+
+Timeline.
+
+School
+
+College
+
+CGPA placeholder.
+
+========================
+8. Achievements
+========================
+
+Animated counters.
+
+Cards.
+
+========================
+9. GitHub Section
+========================
+
+GitHub profile card.
+
+Contribution graph placeholder.
+
+Repository cards.
+
+========================
+10. Resume
+========================
+
+Beautiful resume preview.
+
+Download button.
+
+========================
+11. Contact
+========================
+
+Professional contact form.
+
+EmailJS integration.
+
+Validation.
+
+Success animation.
+
+Include:
+
+Email
+
+LinkedIn
+
+GitHub
+
+Location
+
+========================
+12. Footer
+========================
+
+Simple.
+
+Elegant.
+
+Social icons.
+
+Quick links.
+
+Copyright.
+
+========================
+ANIMATIONS
+========================
+
+Use Framer Motion everywhere.
+
+Fade Up
+
+Slide
+
+Scale
+
+Rotate
+
+Hover
+
+Floating Cards
+
+Mouse Follow
+
+Parallax
+
+Page Transition
+
+Scroll Progress Bar
+
+Back To Top
+
+Typing Animation
+
+Reveal Animations
+
+========================
+RESPONSIVE
+========================
+
+Perfect on:
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+========================
+EXTRA FEATURES
+========================
+
+Dark / Light Toggle
+
+Smooth Scroll
+
+Custom Cursor (desktop only)
+
+Animated Background
+
+Particle Effect
+
+Lazy Loading
+
+SEO
+
+Fast Performance
+
+Accessibility
+
+========================
+PROJECT STRUCTURE
+========================
+
+Organize components:
+
+components/
+
+pages/
+
+assets/
+
+hooks/
+
+utils/
+
+styles/
+
+Keep the code clean.
+
+Use reusable components.
+
+========================
+IMPORTANT
+========================
+
+Do NOT use lorem ipsum.
+
+Use realistic professional placeholder text.
+
+Make everything production-ready.
+
+Include comments where necessary.
+
+The final website should look premium enough to impress recruiters and hiring managers.

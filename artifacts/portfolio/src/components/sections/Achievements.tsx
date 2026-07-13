@@ -1,0 +1,108 @@
+import { motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { fadeIn, staggerContainer } from "@/lib/animations";
+import { Trophy, Code2, Users, Star } from "lucide-react";
+
+function Counter({ end, suffix = "", prefix = "" }: { end: number, suffix?: string, prefix?: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  useEffect(() => {
+    if (isInView) {
+      let start = 0;
+      const duration = 2000;
+      const increment = end / (duration / 16);
+      
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          setCount(end);
+          clearInterval(timer);
+        } else {
+          setCount(Math.floor(start));
+        }
+      }, 16);
+
+      return () => clearInterval(timer);
+    }
+  }, [end, isInView]);
+
+  return <span ref={ref}>{prefix}{count}{suffix}</span>;
+}
+
+const stats = [
+  { icon: <Code2 size={24} />, value: 50, suffix: "+", label: "Projects Completed" },
+  { icon: <Users size={24} />, value: 3, suffix: "k+", label: "Lines of Code" },
+  { icon: <Star size={24} />, value: 4, suffix: ".0", label: "Perfect GPA" },
+  { icon: <Trophy size={24} />, value: 5, suffix: "", label: "Hackathon Wins" },
+];
+
+export default function Achievements() {
+  return (
+    <section id="achievements" className="relative scroll-mt-24">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="flex flex-col gap-16"
+      >
+        <div className="flex flex-col gap-4 text-center max-w-2xl mx-auto">
+          <motion.h2 variants={fadeIn} className="text-3xl md:text-5xl font-display font-bold">
+            Numbers & <span className="text-gradient">Achievements</span>
+          </motion.h2>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              variants={fadeIn}
+              className="glass-card p-6 md:p-8 rounded-3xl flex flex-col items-center justify-center text-center group"
+            >
+              <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                {stat.icon}
+              </div>
+              <div className="text-4xl md:text-5xl font-display font-bold text-foreground mb-2">
+                <Counter end={stat.value} suffix={stat.suffix} />
+              </div>
+              <div className="text-sm font-medium text-muted-foreground">
+                {stat.label}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div variants={fadeIn} className="glass-card rounded-3xl p-8 max-w-4xl mx-auto w-full">
+          <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+            <Trophy className="text-yellow-500" /> Notable Honors
+          </h3>
+          <ul className="space-y-4">
+            <li className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
+              <div>
+                <h4 className="font-bold text-lg">1st Place - Global Data Hackathon 2023</h4>
+                <p className="text-muted-foreground text-sm">Built a predictive healthcare model using patient data to identify early risk factors with 94% accuracy.</p>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0" />
+              <div>
+                <h4 className="font-bold text-lg">Dean's List - All Semesters</h4>
+                <p className="text-muted-foreground text-sm">Maintained top 5% academic standing throughout the entire degree program.</p>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
+              <div>
+                <h4 className="font-bold text-lg">Open Source Contributor</h4>
+                <p className="text-muted-foreground text-sm">Merged 15+ pull requests to popular React and Python open-source libraries.</p>
+              </div>
+            </li>
+          </ul>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
