@@ -98,7 +98,7 @@ export default function Hero() {
               <a href="https://github.com/earnest2005" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-all hover:scale-110">
                 <Github size={24} />
               </a>
-              <a href="https://linkedin.com/earnest-abraham-622b25335" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-all hover:scale-110">
+              <a href="https://www.linkedin.com/in/earnest-abraham-622b25335" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-all hover:scale-110">
                 <Linkedin size={24} />
               </a>
               <a href="mailto:earnestabrah@gmail.com" className="text-muted-foreground hover:text-foreground transition-all hover:scale-110">

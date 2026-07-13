@@ -75,7 +75,7 @@ export default function Contact() {
               <a href="https://github.com/earnest2005" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com/earnest-abraham-622b25335" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
+              <a href="https://www.linkedin.com/in/earnest-abraham-622b25335" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>
