@@ -4,25 +4,54 @@ import { Award, ExternalLink, Calendar } from "lucide-react";
 
 const certifications = [
   {
-    title: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    date: "Aug 2023",
-    icon: "☁️", // We can use an icon component, but a stylistic text element is fine too. Let's use Lucide icons.
+    title: "Completion of C Training",
+    issuer: "Spoken Tutorial (IIT Bombay) & EduPyramids",
+    date: "2026",
   },
   {
-    title: "Data Analyst Professional Certificate",
-    issuer: "Google",
-    date: "May 2023",
+    title: "Participation — IEEE Xplore Webinar",
+    issuer: "EBSCO Information Services India & St. Xavier's Catholic College of Engineering",
+    date: "2026",
   },
   {
-    title: "Java SE 11 Developer Certification",
-    issuer: "Oracle",
-    date: "Jan 2023",
+    title: "Digital Productivity with AI",
+    issuer: "Passport to Earning (P2E) Skills, with UNICEF & YuWaah!",
+    date: "2025",
   },
   {
-    title: "Deep Learning Specialization",
-    issuer: "DeepLearning.AI",
-    date: "Nov 2022",
+    title: "Idea/Poster Presentation — Dream Kanyakumari 2026",
+    issuer: "StartupTN & Nocrul Islam Centre For Higher Education (NICHE)",
+    date: "2026",
+  },
+  {
+    title: "German Language Course — Level A1",
+    issuer: "Bryan's Academy, Nagercoil & St. Xavier's Catholic College of Engineering",
+    date: "2025",
+  },
+  {
+    title: "HackFest'2026 — Intra-College Hackathon",
+    issuer: "Hackathon Cell, St. Xavier's Catholic College of Engineering",
+    date: "2026",
+  },
+  {
+    title: "Internship — Mobile App Development",
+    issuer: "AK Infopark",
+    date: "2025",
+  },
+  {
+    title: "NeuraX'26 — 8-Hour Intra-College Hackathon",
+    issuer: "Hackathon Cell, St. Xavier's Catholic College of Engineering",
+    date: "2026",
+  },
+  {
+    title: "Internship — Java Development",
+    issuer: "White AuraX OPC PVT LTD",
+    date: "2026",
+  },
+  {
+    title: "AI for Beginners",
+    issuer: "HP LIFE",
+    date: "2026",
   }
 ];
 

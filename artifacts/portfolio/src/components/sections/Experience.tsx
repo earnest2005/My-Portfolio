@@ -1,47 +1,27 @@
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
-import { Briefcase, Calendar, Code, GraduationCap } from "lucide-react";
+import { Briefcase, Calendar, Code } from "lucide-react";
 
 const timeline = [
   {
     id: 1,
     type: "internship",
-    title: "Data Analytics Intern",
-    company: "TechInsights Inc.",
-    date: "Summer 2023",
+    title: "Java Developer Intern",
+    company: "White AuraX OPC PVT LTD · Trivandrum",
+    date: "Jul 2026",
     icon: <Briefcase size={20} />,
-    description: "Developed automated data pipelines using Python and Pandas. Created interactive Power BI dashboards that improved executive decision-making speed by 30%.",
-    tags: ["Python", "Power BI", "SQL"]
+    description: "Learned core object-oriented programming concepts and developed a console-based Loan Management System with full CRUD operations. Implemented EMI calculation, loan payment processing, outstanding balance tracking, and automatic loan status updates using ArrayList, encapsulation, constructors, methods, and exception handling.",
+    tags: ["Java", "OOP", "Exception Handling", "Collections"]
   },
   {
     id: 2,
-    type: "project",
-    title: "Lead Frontend Developer",
-    company: "University Software Lab",
-    date: "Jan 2023 - May 2023",
+    type: "internship",
+    title: "Mobile App Development Intern",
+    company: "AK Infopark · Nagercoil",
+    date: "Dec 2025",
     icon: <Code size={20} />,
-    description: "Led a team of 4 students to build a campus event management system using React and Firebase. Implemented complex state management and real-time updates.",
-    tags: ["React", "Firebase", "Team Leadership"]
-  },
-  {
-    id: 3,
-    type: "training",
-    title: "Advanced Java Programming & OOP",
-    company: "CodeAcademy Bootcamps",
-    date: "Fall 2022",
-    icon: <GraduationCap size={20} />,
-    description: "Intensive 12-week training program focusing on enterprise Java development, design patterns, exception handling, and multithreading.",
-    tags: ["Java", "OOP", "Design Patterns"]
-  },
-  {
-    id: 4,
-    type: "workshop",
-    title: "Machine Learning Foundations",
-    company: "Google Developer Student Clubs",
-    date: "Oct 2022",
-    icon: <GraduationCap size={20} />,
-    description: "Participated in hands-on workshops building predictive models using Scikit-Learn and exploring neural network basics.",
-    tags: ["Machine Learning", "Scikit-Learn"]
+    description: "Developed cross-platform mobile applications using React Native. Designed reusable UI components with JavaScript and JSX, managed application state using React hooks (useState, useEffect), and integrated APIs to handle data flow between frontend and backend services.",
+    tags: ["React Native", "JavaScript", "JSX", "REST APIs"]
   }
 ];
 
@@ -60,7 +40,7 @@ export default function Experience() {
             Journey & <span className="text-gradient">Experience</span>
           </motion.h2>
           <motion.p variants={fadeIn} className="text-muted-foreground text-lg">
-            A timeline of my professional growth, practical training, and impactful roles.
+            A timeline of my internships and hands-on development experience.
           </motion.p>
         </div>
 

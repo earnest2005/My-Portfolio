@@ -1,23 +1,15 @@
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
-import { Book, GraduationCap } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 
 const education = [
   {
     degree: "B.Tech in Artificial Intelligence & Data Science",
-    institution: "Tech University Institute",
-    duration: "2021 - 2025",
-    gpa: "3.8/4.0 CGPA",
+    institution: "St. Xavier's Catholic College of Engineering",
+    duration: "3rd Year · Ongoing",
+    gpa: "AI & DS",
     icon: <GraduationCap size={24} className="text-primary" />,
-    description: "Specializing in machine learning architectures, big data processing, and advanced algorithms. Core coursework includes Data Structures, OOP in Java, Database Management Systems, and Statistical Modeling."
-  },
-  {
-    degree: "High School Diploma - Science Track",
-    institution: "Excellence Science Academy",
-    duration: "2019 - 2021",
-    gpa: "95%",
-    icon: <Book size={24} className="text-secondary" />,
-    description: "Focus on Mathematics, Physics, and Computer Science. Led the school coding club and won regional mathematics olympiad."
+    description: "Currently in the 3rd year of a B.Tech program specializing in Artificial Intelligence and Data Science, building a strong foundation in Java, Python, data analytics, and modern software development."
   }
 ];
 
@@ -44,7 +36,7 @@ export default function Education() {
               variants={fadeIn}
               className="glass-card rounded-3xl p-8 flex flex-col md:flex-row gap-6 items-start relative overflow-hidden group"
             >
-              <div className={`absolute top-0 left-0 w-2 h-full ${idx === 0 ? 'bg-primary' : 'bg-secondary'}`} />
+              <div className="absolute top-0 left-0 w-2 h-full bg-primary" />
               
               <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center shrink-0 border border-border group-hover:scale-110 transition-transform duration-300">
                 {edu.icon}

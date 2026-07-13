@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowRight, Download } from "lucide-react";
-import profileImg from "@assets/generated_images/profile.jpg";
+import profileImg from "@assets/0_ChatGPT_Image_Jul_13,_2026,_09_28_58_PM_1783964089174.png";
 
 const roles = [
   "AI & Data Science Student",
@@ -95,13 +95,13 @@ export default function Hero() {
             </div>
 
             <div className="flex items-center gap-6">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-all hover:scale-110">
+              <a href="https://github.com/earnest2005" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-all hover:scale-110">
                 <Github size={24} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-all hover:scale-110">
+              <a href="https://linkedin.com/earnest-abraham-622b25335" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-all hover:scale-110">
                 <Linkedin size={24} />
               </a>
-              <a href="mailto:hello@example.com" className="text-muted-foreground hover:text-foreground transition-all hover:scale-110">
+              <a href="mailto:earnestabrah@gmail.com" className="text-muted-foreground hover:text-foreground transition-all hover:scale-110">
                 <Mail size={24} />
               </a>
             </div>

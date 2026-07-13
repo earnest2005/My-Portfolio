@@ -4,53 +4,29 @@ import { Github, ExternalLink, Activity, ShieldAlert, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import projectBilling from "@assets/generated_images/project_billing.jpg";
 import projectLoan from "@assets/generated_images/project_loan.jpg";
-import projectDashboard from "@assets/generated_images/project_dashboard.jpg";
-import projectPortfolio from "@assets/generated_images/project_portfolio.jpg";
 
 const projects = [
   {
-    title: "Elite Men's Wear Billing System",
-    description: "A comprehensive point-of-sale and inventory management system designed for premium retail. Handles complex GST calculations and real-time stock tracking.",
-    image: projectBilling,
-    tags: ["React", "Firebase", "Inventory", "Billing", "Customer Management", "GST", "User Management"],
-    features: ["Real-time inventory sync", "Automated GST invoicing", "Customer loyalty tracking"],
-    challenges: "Managing concurrent transactions and ensuring data consistency in Firebase.",
-    learnings: "Deepened understanding of NoSQL database structuring and React context for global state.",
-    github: "https://github.com",
-    demo: "https://demo.com"
-  },
-  {
     title: "Loan Management System",
-    description: "Enterprise-grade desktop application for processing loan applications, calculating amortizations, and managing customer financial records securely.",
+    description: "A Loan Management System built with Core Java using a layered architecture to manage customers, process loans, calculate EMI, track repayments, and generate loan reports. Demonstrates strong Object-Oriented Programming concepts and clean code organization.",
     image: projectLoan,
-    tags: ["Core Java", "OOP", "Collections", "Exception Handling", "Swing"],
-    features: ["Amortization schedule generator", "Risk assessment logic", "Encrypted data storage"],
-    challenges: "Building a responsive UI in Java Swing while running heavy financial calculations.",
-    learnings: "Mastered multithreading in Java and robust exception handling architectures.",
-    github: "https://github.com",
+    tags: ["Core Java", "OOP", "Collections", "Exception Handling"],
+    features: ["EMI calculation engine", "Repayment & outstanding balance tracking", "Automatic loan status updates", "Loan report generation"],
+    challenges: "Structuring a layered architecture in Core Java that keeps customer, loan, and repayment logic cleanly separated and maintainable.",
+    learnings: "Deepened understanding of OOP fundamentals, ArrayList and Collections usage, encapsulation, and robust exception handling.",
+    github: "https://github.com/earnest2005",
     demo: null
   },
   {
-    title: "Data Analytics Dashboard",
-    description: "Interactive executive dashboard synthesizing millions of rows of sales data into actionable business intelligence with predictive trending.",
-    image: projectDashboard,
-    tags: ["Power BI", "SQL", "Excel", "Python", "Pandas"],
-    features: ["Predictive sales forecasting", "Interactive drill-down charts", "Automated ETL pipeline"],
-    challenges: "Optimizing SQL queries to handle large datasets without timing out the dashboard.",
-    learnings: "Advanced DAX formulas and data storytelling techniques.",
-    github: "https://github.com",
-    demo: "https://demo.com"
-  },
-  {
-    title: "Premium Portfolio Website",
-    description: "A glassmorphic, highly interactive personal portfolio designed to stand out. Features complex scroll animations and dynamic theming.",
-    image: projectPortfolio,
-    tags: ["React", "Tailwind", "Framer Motion", "Vite"],
-    features: ["Dark/Light mode seamless toggle", "Scroll-triggered reveals", "Performance optimized"],
-    challenges: "Creating smooth, jank-free animations across varying device capabilities.",
-    learnings: "Advanced Framer Motion orchestration and complex CSS variable theming.",
-    github: "https://github.com",
-    demo: "https://demo.com"
+    title: "Elite Men's Wear Billing System",
+    description: "A comprehensive Point of Sale (POS) and inventory management web application built for a premium men's fashion retail store, featuring real-time inventory tracking, seamless billing operations, and role-based staff access control.",
+    image: projectBilling,
+    tags: ["React", "Tailwind CSS", "Firebase"],
+    features: ["Real-time inventory tracking", "Seamless billing operations", "Role-based staff access control", "Responsive UI with dark mode support"],
+    challenges: "Designing a responsive, usable interface that streamlines daily retail operations while keeping inventory and billing data in sync in real time.",
+    learnings: "Hands-on experience with Firebase (Firestore & Authentication), React state management, and building production-ready retail UIs.",
+    github: "https://github.com/earnest2005",
+    demo: null
   }
 ];
 

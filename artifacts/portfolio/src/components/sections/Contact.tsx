@@ -51,13 +51,13 @@ export default function Contact() {
           </div>
 
           <motion.div variants={fadeIn} className="flex flex-col gap-6 mt-4">
-            <a href="mailto:hello@example.com" className="flex items-center gap-4 group">
+            <a href="mailto:earnestabrah@gmail.com" className="flex items-center gap-4 group">
               <div className="w-12 h-12 rounded-full glass flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                 <Mail size={20} />
               </div>
               <div>
                 <p className="text-sm text-muted-foreground font-medium">Email</p>
-                <p className="text-lg font-bold group-hover:text-primary transition-colors">alex.evens@example.com</p>
+                <p className="text-lg font-bold group-hover:text-primary transition-colors">earnestabrah@gmail.com</p>
               </div>
             </a>
 
@@ -67,15 +67,15 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground font-medium">Location</p>
-                <p className="text-lg font-bold">San Francisco, CA</p>
+                <p className="text-lg font-bold">Kulesekaram, Tamil Nadu, India</p>
               </div>
             </div>
             
             <div className="flex gap-4 mt-4">
-              <a href="#" className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
+              <a href="https://github.com/earnest2005" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
                 <Github size={20} />
               </a>
-              <a href="#" className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
+              <a href="https://linkedin.com/earnest-abraham-622b25335" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>

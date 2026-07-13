@@ -32,10 +32,10 @@ function Counter({ end, suffix = "", prefix = "" }: { end: number, suffix?: stri
 }
 
 const stats = [
-  { icon: <Code2 size={24} />, value: 50, suffix: "+", label: "Projects Completed" },
-  { icon: <Users size={24} />, value: 3, suffix: "k+", label: "Lines of Code" },
-  { icon: <Star size={24} />, value: 4, suffix: ".0", label: "Perfect GPA" },
-  { icon: <Trophy size={24} />, value: 5, suffix: "", label: "Hackathon Wins" },
+  { icon: <Code2 size={24} />, value: 2, suffix: "+", label: "Projects Built" },
+  { icon: <Users size={24} />, value: 2, suffix: "", label: "Internships Completed" },
+  { icon: <Star size={24} />, value: 10, suffix: "+", label: "Certifications Earned" },
+  { icon: <Trophy size={24} />, value: 1, suffix: "", label: "Competition Award" },
 ];
 
 export default function Achievements() {
@@ -82,22 +82,22 @@ export default function Achievements() {
             <li className="flex items-start gap-4">
               <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
               <div>
-                <h4 className="font-bold text-lg">1st Place - Global Data Hackathon 2023</h4>
-                <p className="text-muted-foreground text-sm">Built a predictive healthcare model using patient data to identify early risk factors with 94% accuracy.</p>
+                <h4 className="font-bold text-lg">Prize Winner — Engineer's Day 2025 Idea Presentation</h4>
+                <p className="text-muted-foreground text-sm">Awarded a Certificate of Achievement by ACM, ACM-W, and St. Xavier's Catholic College of Engineering for securing a prize in the idea presentation competition.</p>
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0" />
               <div>
-                <h4 className="font-bold text-lg">Dean's List - All Semesters</h4>
-                <p className="text-muted-foreground text-sm">Maintained top 5% academic standing throughout the entire degree program.</p>
+                <h4 className="font-bold text-lg">Hackathon Participant — HackFest'2026 & NeuraX'26</h4>
+                <p className="text-muted-foreground text-sm">Participated in two intra-college technical hackathons organized by the Hackathon Cell at St. Xavier's Catholic College of Engineering.</p>
               </div>
             </li>
             <li className="flex items-start gap-4">
               <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
               <div>
-                <h4 className="font-bold text-lg">Open Source Contributor</h4>
-                <p className="text-muted-foreground text-sm">Merged 15+ pull requests to popular React and Python open-source libraries.</p>
+                <h4 className="font-bold text-lg">Idea/Poster Presenter — Dream Kanyakumari 2026</h4>
+                <p className="text-muted-foreground text-sm">Presented at an event conducted in collaboration with StartupTN and the Nocrul Islam Centre For Higher Education (NICHE).</p>
               </div>
             </li>
           </ul>

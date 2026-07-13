@@ -1,54 +1,87 @@
 import { motion } from "framer-motion";
-import { FileSpreadsheet, BarChart3 } from "lucide-react";
+import { FileSpreadsheet, BarChart3, Sparkles, Briefcase as BriefcaseIcon, Users } from "lucide-react";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import { FaJava } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
-import { SiPython, SiJavascript, SiMysql, SiHtml5, SiCss, SiReact, SiTailwindcss, SiFirebase, SiNumpy, SiPandas, SiGit, SiGithub, SiReplit } from "react-icons/si";
+import { SiC, SiCplusplus, SiPython, SiJavascript, SiMysql, SiHtml5, SiCss, SiReact, SiTailwindcss, SiFirebase, SiNumpy, SiPandas, SiGit, SiGithub, SiReplit, SiEclipseide, SiGooglesheets } from "react-icons/si";
 
 const skillCategories = [
   {
-    title: "Programming",
+    title: "Programming Languages",
     skills: [
+      { name: "C", icon: <SiC /> },
+      { name: "C++", icon: <SiCplusplus /> },
       { name: "Java", icon: <FaJava /> },
       { name: "Python", icon: <SiPython /> },
-      { name: "JavaScript", icon: <SiJavascript /> },
-      { name: "SQL", icon: <SiMysql /> }
+      { name: "SQL", icon: <SiMysql /> },
+      { name: "HTML5", icon: <SiHtml5 /> },
+      { name: "CSS3", icon: <SiCss /> }
     ]
   },
   {
-    title: "Frontend",
+    title: "Frontend Development",
     skills: [
-      { name: "HTML", icon: <SiHtml5 /> },
-      { name: "CSS", icon: <SiCss /> },
-      { name: "React", icon: <SiReact /> },
-      { name: "Tailwind", icon: <SiTailwindcss /> }
+      { name: "React.js", icon: <SiReact /> },
+      { name: "JavaScript", icon: <SiJavascript /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+      { name: "Responsive Design", icon: <span className="font-bold text-xs">RWD</span> }
     ]
   },
   {
-    title: "Backend & Cloud",
+    title: "Backend & Database",
     skills: [
       { name: "Firebase", icon: <SiFirebase /> },
+      { name: "Firestore", icon: <SiFirebase /> },
       { name: "REST APIs", icon: <span className="font-bold text-xs">API</span> }
     ]
   },
   {
-    title: "Data Analytics",
+    title: "Data Analytics & AI",
     skills: [
-      { name: "Power BI", icon: <BarChart3 /> },
       { name: "Excel", icon: <FileSpreadsheet /> },
-      { name: "NumPy", icon: <SiNumpy /> },
       { name: "Pandas", icon: <SiPandas /> },
-      { name: "Matplotlib", icon: <span className="font-bold text-xs">MPL</span> }
+      { name: "NumPy", icon: <SiNumpy /> },
+      { name: "Matplotlib", icon: <span className="font-bold text-xs">MPL</span> },
+      { name: "Data Visualization", icon: <BarChart3 /> }
     ]
   },
   {
-    title: "Tools",
+    title: "Software Development",
+    skills: [
+      { name: "OOP", icon: <span className="font-bold text-xs">OOP</span> },
+      { name: "Data Structures", icon: <span className="font-bold text-xs">DSA</span> },
+      { name: "Exception Handling", icon: <span className="font-bold text-xs">TRY</span> },
+      { name: "Collections", icon: <span className="font-bold text-xs">COL</span> },
+      { name: "CRUD Operations", icon: <span className="font-bold text-xs">CRUD</span> }
+    ]
+  },
+  {
+    title: "Tools & Platforms",
     skills: [
       { name: "Git", icon: <SiGit /> },
       { name: "GitHub", icon: <SiGithub /> },
       { name: "VS Code", icon: <VscVscode /> },
-      { name: "Cursor AI", icon: <span className="font-bold text-xs">AI</span> },
+      { name: "Eclipse IDE", icon: <SiEclipseide /> },
+      { name: "Cursor AI", icon: <Sparkles size={16} /> },
       { name: "Replit", icon: <SiReplit /> }
+    ]
+  },
+  {
+    title: "Design & Productivity",
+    skills: [
+      { name: "MS Office", icon: <BriefcaseIcon size={16} /> },
+      { name: "Google Workspace", icon: <SiGooglesheets /> },
+      { name: "Canva", icon: <span className="font-bold text-xs">CV</span> }
+    ]
+  },
+  {
+    title: "Soft Skills",
+    skills: [
+      { name: "Problem Solving", icon: <Users size={16} /> },
+      { name: "Teamwork", icon: <Users size={16} /> },
+      { name: "Communication", icon: <Users size={16} /> },
+      { name: "Adaptability", icon: <Users size={16} /> },
+      { name: "Time Management", icon: <Users size={16} /> }
     ]
   }
 ];

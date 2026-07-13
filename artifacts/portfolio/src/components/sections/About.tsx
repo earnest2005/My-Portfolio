@@ -6,17 +6,17 @@ const aboutItems = [
   {
     icon: <BookOpen className="text-primary w-6 h-6" />,
     title: "Education",
-    desc: "B.Tech in Artificial Intelligence & Data Science, maintaining a strong 3.8 GPA while actively participating in tech clubs."
+    desc: "3rd year B.Tech student in Artificial Intelligence & Data Science at St. Xavier's Catholic College of Engineering."
   },
   {
     icon: <Target className="text-secondary w-6 h-6" />,
     title: "Objective",
-    desc: "To leverage my dual expertise in software engineering and data analytics to build scalable, intelligent systems."
+    desc: "To leverage my dual expertise in software development and data analytics to build scalable, intelligent solutions that make a difference."
   },
   {
     icon: <Heart className="text-accent w-6 h-6" />,
     title: "Passion",
-    desc: "Obsessed with clean code, elegant user interfaces, and extracting meaningful narratives from complex datasets."
+    desc: "Passionate about learning, building, and creating solutions that make a difference — with a strong foundation in Java, React, Python, and Data Analytics."
   },
   {
     icon: <Zap className="text-yellow-500 w-6 h-6" />,
@@ -26,12 +26,12 @@ const aboutItems = [
   {
     icon: <MessageSquare className="text-green-500 w-6 h-6" />,
     title: "Soft Skills",
-    desc: "Effective communicator, collaborative team player, and adept at translating technical concepts for non-technical stakeholders."
+    desc: "Effective communicator and collaborative team player, with strengths in problem solving, adaptability, and time management."
   },
   {
     icon: <Globe className="text-blue-400 w-6 h-6" />,
     title: "Languages",
-    desc: "Fluent in English and Spanish. Currently exploring the language of mathematics in machine learning algorithms."
+    desc: "Fluent in English and Tamil. Currently learning German (Level A1) through a certified course."
   }
 ];
 
@@ -50,7 +50,7 @@ export default function About() {
             About <span className="text-gradient">Me</span>
           </motion.h2>
           <motion.p variants={fadeIn} className="text-muted-foreground text-lg">
-            I am a student developer passionate about the intersection of software engineering and artificial intelligence.
+            Aspiring AI Engineer and Software Developer with a strong foundation in Java, React, Python, and Data Analytics. Passionate about learning, building, and creating solutions that make a difference.
           </motion.p>
         </div>
 
