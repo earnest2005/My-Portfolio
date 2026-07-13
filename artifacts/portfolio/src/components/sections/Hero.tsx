@@ -60,7 +60,7 @@ export default function Hero() {
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-6 text-foreground leading-[1.1]">
               Hi, I'm <span className="text-gradient">Earnest Abraham</span>
               <br />
-              <span className="text-3xl sm:text-4xl lg:text-5xl mt-4 relative block h-[76px] sm:h-[100px] lg:h-[64px] leading-tight text-muted-foreground font-semibold overflow-hidden">
+              <span className="text-3xl sm:text-4xl lg:text-5xl mt-4 relative block h-[92px] sm:h-[116px] lg:h-[76px] leading-tight text-muted-foreground font-semibold">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentRoleIndex}
