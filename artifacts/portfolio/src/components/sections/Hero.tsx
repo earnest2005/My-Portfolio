@@ -60,7 +60,7 @@ export default function Hero() {
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-6 text-foreground leading-[1.1]">
               Hi, I'm <span className="text-gradient">Earnest Abraham</span>
               <br />
-              <span className="text-3xl sm:text-4xl lg:text-5xl mt-4 block min-h-[44px] sm:min-h-[56px] lg:min-h-[64px] leading-tight text-muted-foreground font-semibold">
+              <span className="text-3xl sm:text-4xl lg:text-5xl mt-4 relative block h-[76px] sm:h-[100px] lg:h-[64px] leading-tight text-muted-foreground font-semibold overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentRoleIndex}
@@ -68,7 +68,7 @@ export default function Hero() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="block"
+                    className="absolute inset-0 flex items-center justify-center lg:justify-start"
                   >
                     {roles[currentRoleIndex]}
                   </motion.span>
