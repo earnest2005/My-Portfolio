@@ -1,0 +1,1 @@
+- [Web3Forms domain blocking](web3forms-domain-blocking.md) — free-tier Web3Forms rejects both server-side calls and Replit dev-preview domains; only works client-side on a real published domain.
