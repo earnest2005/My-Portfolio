@@ -29,6 +29,11 @@ if (!basePath) {
 
 export default defineConfig({
   base: basePath,
+  define: {
+    'import.meta.env.VITE_WEB3FORMS_ACCESS_KEY': JSON.stringify(
+      process.env.WEB3FORMS_ACCESS_KEY ?? '',
+    ),
+  },
   plugins: [
     react(),
     tailwindcss(),

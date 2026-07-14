@@ -7,28 +7,53 @@ import { useState } from "react";
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  
+  const [error, setError] = useState<string | null>(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
+    setError(null);
+
+    try {
+      const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      if (!accessKey) {
+        throw new Error("Contact form is not configured.");
+      }
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New portfolio message from ${formData.name}`,
+          from_name: formData.name,
+          ...formData,
+        }),
+      });
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Failed to send message.");
+      }
+
       setIsSubmitting(false);
       setIsSuccess(true);
-      
+
       // Reset after showing success
       setTimeout(() => {
         setIsSuccess(false);
         setFormData({ name: "", email: "", message: "" });
       }, 5000);
-    }, 1500);
+    } catch (err) {
+      setIsSubmitting(false);
+      setError(err instanceof Error ? err.message : "Failed to send message.");
+    }
   };
 
   return (
@@ -99,6 +124,11 @@ export default function Contact() {
             ) : null}
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-0">
+              {error ? (
+                <div className="rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
+                  {error}
+                </div>
+              ) : null}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="name" className="text-sm font-medium">Name</label>
