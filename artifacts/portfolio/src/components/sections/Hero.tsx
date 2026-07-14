@@ -5,10 +5,9 @@ import { Github, Linkedin, Mail, ArrowRight, Download } from "lucide-react";
 import profileImg from "@assets/0_ChatGPT_Image_Jul_13,_2026,_09_28_58_PM_1783964089174.png";
 
 const roles = [
-  "Aspiring AI & Data Science Engineer",
   "Java Developer",
   "React Developer",
-  "Java & React Developer"
+  "Aspiring AI Engineer"
 ];
 
 export default function Hero() {
@@ -60,7 +59,7 @@ export default function Hero() {
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-6 text-foreground leading-[1.1]">
               Hi, I'm <span className="text-gradient">Earnest Abraham</span>
               <br />
-              <span className="text-3xl sm:text-4xl lg:text-5xl mt-4 relative block h-[92px] sm:h-[116px] lg:h-32 leading-tight text-muted-foreground font-semibold">
+              <span className="text-3xl sm:text-4xl lg:text-5xl mt-4 relative block h-[46px] sm:h-[58px] lg:h-[64px] leading-tight text-muted-foreground font-semibold">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentRoleIndex}
