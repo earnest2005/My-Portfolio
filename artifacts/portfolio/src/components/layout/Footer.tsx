@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start gap-2">
           <div className="text-2xl font-display font-bold tracking-tight text-foreground flex items-center gap-2.5">
             <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center text-white text-xs font-bold shadow-lg shadow-primary/30 ring-1 ring-white/20">
-              <span className="relative z-10">AE</span>
+              <span className="relative z-10">EA</span>
               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent opacity-60 blur-md -z-10" />
             </div>
             <span className="text-gradient">Earnest<span className="text-foreground/70">.dev</span></span>
