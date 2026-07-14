@@ -45,12 +45,13 @@ export default function Navbar() {
         <a 
           href="#home" 
           onClick={(e) => { e.preventDefault(); scrollTo('#home'); }}
-          className="text-xl font-display font-bold tracking-tight text-foreground z-50 flex items-center gap-2"
+          className="text-xl font-display font-bold tracking-tight text-foreground z-50 flex items-center gap-2.5 group"
         >
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white text-sm">
-            AE
+          <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-primary/30 ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3">
+            <span className="relative z-10">AE</span>
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent opacity-60 blur-md -z-10" />
           </div>
-          <span>Earnest<span className="text-muted-foreground">.dev</span></span>
+          <span className="text-gradient">Earnest<span className="text-foreground/70">.dev</span></span>
         </a>
 
         {/* Desktop Nav */}

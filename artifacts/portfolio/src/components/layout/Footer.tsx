@@ -10,11 +10,12 @@ export default function Footer() {
     <footer className="w-full py-12 bg-background border-t border-border mt-24">
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col items-center md:items-start gap-2">
-          <div className="text-2xl font-display font-bold tracking-tight text-foreground flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white text-[10px]">
-              AE
+          <div className="text-2xl font-display font-bold tracking-tight text-foreground flex items-center gap-2.5">
+            <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center text-white text-xs font-bold shadow-lg shadow-primary/30 ring-1 ring-white/20">
+              <span className="relative z-10">AE</span>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent opacity-60 blur-md -z-10" />
             </div>
-            <span>Earnest<span className="text-muted-foreground">.dev</span></span>
+            <span className="text-gradient">Earnest<span className="text-foreground/70">.dev</span></span>
           </div>
           <p className="text-sm text-muted-foreground">
             Crafting intelligent solutions & elegant interfaces.
