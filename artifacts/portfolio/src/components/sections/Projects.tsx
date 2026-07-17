@@ -122,7 +122,7 @@ export default function Projects() {
                       </Button>
                     )}
                     {project.demo && (
-                      <Button variant="default" className="gap-2 rounded-full bg-primary text-white" onClick={() => window.open(project.demo, '_blank')}>
+                      <Button variant="default" className="gap-2 rounded-full bg-primary text-white" onClick={() => window.open(project.demo ?? undefined, '_blank')}>
                         <ExternalLink size={18} /> Live Demo
                       </Button>
                     )}

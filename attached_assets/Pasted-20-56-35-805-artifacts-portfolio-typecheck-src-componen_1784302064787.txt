@@ -1,0 +1,34 @@
+20:56:35.805 
+artifacts/portfolio typecheck: src/components/sections/Certifications.tsx(8,26): error TS2307: Cannot find module '@assets/4_German_A1_1783965316792.pdf' or its corresponding type declarations.
+20:56:35.805 
+artifacts/portfolio typecheck: src/components/sections/Certifications.tsx(9,26): error TS2307: Cannot find module '@assets/5_Hackfest_1783965316795.pdf' or its corresponding type declarations.
+20:56:35.806 
+artifacts/portfolio typecheck: src/components/sections/Certifications.tsx(10,30): error TS2307: Cannot find module '@assets/6_Internship_3rd_sem_1783965316797.pdf' or its corresponding type declarations.
+20:56:35.806 
+artifacts/portfolio typecheck: src/components/sections/Certifications.tsx(11,24): error TS2307: Cannot find module '@assets/7_Neurax_1783965316799.pdf' or its corresponding type declarations.
+20:56:35.806 
+artifacts/portfolio typecheck: src/components/sections/Certifications.tsx(12,38): error TS2307: Cannot find module '@assets/8_White_AuraX_Internship_1783965316801.pdf' or its corresponding type declarations.
+20:56:35.807 
+artifacts/portfolio typecheck: src/components/sections/Contact.tsx(24,37): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+20:56:35.807 
+artifacts/portfolio typecheck: src/components/sections/Hero.tsx(5,24): error TS2307: Cannot find module '@assets/0_ChatGPT_Image_Jul_13,_2026,_09_28_58_PM_1783964089174.png' or its corresponding type declarations.
+20:56:35.807 
+artifacts/portfolio typecheck: src/components/sections/Projects.tsx(5,28): error TS2307: Cannot find module '@assets/generated_images/project_billing.jpg' or its corresponding type declarations.
+20:56:35.807 
+artifacts/portfolio typecheck: src/components/sections/Projects.tsx(6,25): error TS2307: Cannot find module '@assets/generated_images/project_loan.jpg' or its corresponding type declarations.
+20:56:35.809 
+artifacts/portfolio typecheck: src/components/sections/Projects.tsx(125,129): error TS2345: Argument of type 'null' is not assignable to parameter of type 'string | URL | undefined'.
+20:56:35.835 
+artifacts/portfolio typecheck: Failed
+20:56:35.852 
+/vercel/path0/artifacts/portfolio:
+20:56:35.852 
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/portfolio@0.0.0 typecheck: `tsc -p tsconfig.json --noEmit`
+20:56:35.853 
+Exit status 2
+20:56:35.887 
+ ELIFECYCLE  Command failed with exit code 2.
+20:56:35.922 
+ ELIFECYCLE  Command failed with exit code 2.
+20:56:35.944 
+Error: Command "pnpm run build" exited with 2
