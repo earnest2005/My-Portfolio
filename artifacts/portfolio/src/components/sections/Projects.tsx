@@ -1,138 +1,160 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
-import { Github, ExternalLink, Activity, ShieldAlert, Cpu } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, ChevronLeft, ChevronRight, Github, ExternalLink } from "lucide-react";
 import projectBilling from "@assets/generated_images/project_billing.jpg";
 import projectLoan from "@assets/generated_images/project_loan.jpg";
+import projectPortfolio from "@assets/generated_images/project_portfolio.jpg";
 
-const projects = [
-  {
-    title: "Loan Management System",
-    description: "A Loan Management System built with Core Java using a layered architecture to manage customers, process loans, calculate EMI, track repayments, and generate loan reports. Demonstrates strong Object-Oriented Programming concepts and clean code organization.",
-    image: projectLoan,
-    tags: ["Core Java", "OOP", "Collections", "Exception Handling"],
-    features: ["EMI calculation engine", "Repayment & outstanding balance tracking", "Automatic loan status updates", "Loan report generation"],
-    challenges: "Structuring a layered architecture in Core Java that keeps customer, loan, and repayment logic cleanly separated and maintainable.",
-    learnings: "Deepened understanding of OOP fundamentals, ArrayList and Collections usage, encapsulation, and robust exception handling.",
-    github: "https://github.com/earnest2005",
-    demo: null
-  },
+const projectsList = [
   {
     title: "Elite Men's Wear Billing System",
-    description: "A comprehensive Point of Sale (POS) and inventory management web application built for a premium men's fashion retail store, featuring real-time inventory tracking, seamless billing operations, and role-based staff access control.",
+    description: "A full-stack billing and inventory management system with admin & staff roles, invoice management, low stock alerts, and reports.",
     image: projectBilling,
-    tags: ["React", "Tailwind CSS", "Firebase"],
-    features: ["Real-time inventory tracking", "Seamless billing operations", "Role-based staff access control", "Responsive UI with dark mode support"],
-    challenges: "Designing a responsive, usable interface that streamlines daily retail operations while keeping inventory and billing data in sync in real time.",
-    learnings: "Hands-on experience with Firebase (Firestore & Authentication), React state management, and building production-ready retail UIs.",
-    github: "https://github.com/earnest2005",
-    demo: null
+    tags: ["React", "Firebase", "Tailwind CSS"],
+    github: "https://github.com/earnest2005"
+  },
+  {
+    title: "Loan Management System",
+    description: "Java console application to manage loan applications with file handling, customer validation, and auto-generated IDs.",
+    image: projectLoan,
+    tags: ["Java", "OOP", "File Handling"],
+    github: "https://github.com/earnest2005"
+  },
+  {
+    title: "Personal Portfolio Website",
+    description: "A modern, responsive portfolio built with React, Vite, Tailwind CSS and Framer Motion with smooth animations.",
+    image: projectPortfolio,
+    tags: ["React", "Vite", "Framer Motion"],
+    github: "https://github.com/earnest2005"
   }
 ];
 
 export default function Projects() {
+  const [scrollIndex, setScrollIndex] = useState(0);
+
+  const handlePrev = () => {
+    setScrollIndex((prev) => (prev > 0 ? prev - 1 : projectsList.length - 1));
+  };
+
+  const handleNext = () => {
+    setScrollIndex((prev) => (prev < projectsList.length - 1 ? prev + 1 : 0));
+  };
+
   return (
-    <section id="projects" className="relative scroll-mt-24">
+    <section id="projects" className="relative scroll-mt-24 py-8">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="flex flex-col gap-12"
+        viewport={{ once: true, margin: "-80px" }}
+        className="flex flex-col gap-6"
       >
-        <div className="flex flex-col gap-4 text-center max-w-2xl mx-auto">
-          <motion.h2 variants={fadeIn} className="text-3xl md:text-5xl font-display font-bold">
-            Featured <span className="text-gradient">Projects</span>
-          </motion.h2>
-          <motion.p variants={fadeIn} className="text-muted-foreground text-lg">
-            Selected works showcasing my ability to build complex applications from concept to deployment.
-          </motion.p>
+        {/* Header row */}
+        <div className="flex items-end justify-between">
+          <div className="flex flex-col items-start gap-1">
+            <span className="text-orange-400 text-xs font-bold tracking-wider uppercase">
+              Portfolio Showcase
+            </span>
+            <motion.h2 variants={fadeIn} className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+              Featured <span className="text-orange-500">Projects</span>
+            </motion.h2>
+          </div>
+
+          <motion.a 
+            variants={fadeIn}
+            href="https://github.com/earnest2005" 
+            target="_blank" 
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 text-orange-400 hover:text-white text-xs sm:text-sm font-semibold transition-colors"
+          >
+            View All Projects
+            <ArrowRight size={15} />
+          </motion.a>
         </div>
 
-        <div className="flex flex-col gap-24">
-          {projects.map((project, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <motion.div 
+        {/* Carousel Grid Area */}
+        <div className="relative group">
+          
+          {/* Navigation Arrows */}
+          <button 
+            onClick={handlePrev}
+            className="absolute left-[-14px] sm:left-[-18px] top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#12182B]/90 border border-slate-700/80 text-slate-300 hover:text-white hover:border-orange-500/60 flex items-center justify-center shadow-lg transition-all"
+            aria-label="Previous Project"
+          >
+            <ChevronLeft size={17} />
+          </button>
+
+          <button 
+            onClick={handleNext}
+            className="absolute right-[-14px] sm:right-[-18px] top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#12182B]/90 border border-slate-700/80 text-slate-300 hover:text-white hover:border-orange-500/60 flex items-center justify-center shadow-lg transition-all"
+            aria-label="Next Project"
+          >
+            <ChevronRight size={17} />
+          </button>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {projectsList.map((project, idx) => (
+              <motion.div
                 key={project.title}
                 variants={fadeIn}
-                className={`flex flex-col gap-8 lg:gap-16 items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                className="bg-[#0F1524] border border-slate-800/90 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:border-orange-500/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] group/card"
               >
-                {/* Image Section */}
-                <div className="w-full lg:w-1/2 relative group">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary to-accent opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-500 rounded-3xl" />
-                  <div className="relative rounded-3xl overflow-hidden glass-card border-white/10 shadow-2xl aspect-[16/10]">
-                    <div className="absolute inset-0 bg-background/20" />
+                <div>
+                  {/* Image Container */}
+                  <div className="w-full aspect-[16/9] rounded-xl overflow-hidden mb-4 bg-[#080C14] relative border border-slate-800/60">
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
-                        e.currentTarget.parentElement?.classList.add('bg-muted', 'flex', 'items-center', 'justify-center');
                       }}
                     />
-                    <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl pointer-events-none" />
                   </div>
+
+                  {/* Title & Description */}
+                  <h3 className="text-white text-base font-bold mb-2 group-hover/card:text-orange-400 transition-colors">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4 font-normal">
+                    {project.description}
+                  </p>
                 </div>
 
-                {/* Content Section */}
-                <div className="w-full lg:w-1/2 flex flex-col gap-6">
-                  <div>
-                    <h3 className="text-3xl font-display font-bold mb-4">{project.title}</h3>
-                    <p className="text-muted-foreground text-lg leading-relaxed">{project.description}</p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary border border-secondary/20">
+                {/* Tech Tags Row */}
+                <div className="flex items-center justify-between pt-3 border-t border-slate-800/60 mt-auto">
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tags.map((tag) => (
+                      <span 
+                        key={tag} 
+                        className="px-2.5 py-1 rounded-md bg-[#141B2D] border border-slate-700/50 text-slate-300 text-[11px] font-medium"
+                      >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                    <div className="glass p-4 rounded-xl">
-                      <div className="flex items-center gap-2 text-primary font-medium mb-2">
-                        <Activity size={16} /> Key Features
-                      </div>
-                      <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-                        {project.features.map(f => <li key={f}>{f}</li>)}
-                      </ul>
-                    </div>
-                    <div className="glass p-4 rounded-xl">
-                      <div className="flex items-center gap-2 text-accent font-medium mb-2">
-                        <ShieldAlert size={16} /> Challenges
-                      </div>
-                      <p className="text-sm text-muted-foreground">{project.challenges}</p>
-                    </div>
-                  </div>
-
-                  <div className="glass p-4 rounded-xl mb-2">
-                    <div className="flex items-center gap-2 text-secondary font-medium mb-2">
-                      <Cpu size={16} /> Key Learnings
-                    </div>
-                    <p className="text-sm text-muted-foreground">{project.learnings}</p>
-                  </div>
-
-                  <div className="flex gap-4">
-                    {project.github && (
-                      <Button variant="outline" className="gap-2 rounded-full" onClick={() => window.open(project.github, '_blank')}>
-                        <Github size={18} /> Source Code
-                      </Button>
-                    )}
-                    {project.demo && (
-                      <Button variant="default" className="gap-2 rounded-full bg-primary text-white" onClick={() => window.open(project.demo ?? undefined, '_blank')}>
-                        <ExternalLink size={18} /> Live Demo
-                      </Button>
-                    )}
-                  </div>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-2 rounded-lg bg-[#141B2D] text-slate-300 hover:text-white hover:bg-orange-500/20 hover:border-orange-500/40 border border-slate-700/60 transition-all shrink-0"
+                    aria-label="View Code"
+                  >
+                    <Github size={15} />
+                  </a>
                 </div>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
+
         </div>
       </motion.div>
     </section>
   );
 }
+
+

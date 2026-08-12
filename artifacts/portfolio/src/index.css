@@ -46,67 +46,67 @@
 }
 
 :root {
-  --background: 210 20% 98%;
-  --foreground: 222.2 47.4% 11.2%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 217.2 91.2% 59.8%;
+  --background: 224 71% 4%;
+  --foreground: 213 31% 95%;
+  --border: 216 34% 15%;
+  --input: 216 34% 15%;
+  --ring: 263.4 70% 50.4%;
   
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 47.4% 11.2%;
-  --card-border: 214.3 31.8% 91.4%;
+  --card: 224 50% 7%;
+  --card-foreground: 213 31% 95%;
+  --card-border: 216 34% 15%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 47.4% 11.2%;
-  --popover-border: 214.3 31.8% 91.4%;
+  --popover: 224 50% 7%;
+  --popover-foreground: 213 31% 95%;
+  --popover-border: 216 34% 15%;
 
-  --primary: 217.2 91.2% 59.8%;
+  --primary: 263.4 70% 50.4%;
   --primary-foreground: 210 40% 98%;
 
-  --secondary: 258.3 89.5% 66.1%;
+  --secondary: 217.2 91.2% 59.8%;
   --secondary-foreground: 210 40% 98%;
-
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-
-  --accent: 188.7 94.5% 42.7%;
-  --accent-foreground: 210 40% 98%;
-
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-
-  --radius: 0.75rem;
-
-  --app-font-sans: 'Plus Jakarta Sans', sans-serif;
-  --app-font-display: 'Space Grotesk', sans-serif;
-}
-
-.dark {
-  --background: 224 71% 4%;
-  --foreground: 213 31% 91%;
-  --border: 216 34% 17%;
-  --input: 216 34% 17%;
-  --ring: 217.2 91.2% 59.8%;
-  
-  --card: 224 71% 4%;
-  --card-foreground: 213 31% 91%;
-  --card-border: 216 34% 17%;
-
-  --popover: 224 71% 4%;
-  --popover-foreground: 213 31% 91%;
-  --popover-border: 216 34% 17%;
-
-  --primary: 217.2 91.2% 59.8%;
-  --primary-foreground: 222.2 47.4% 1.2%;
-
-  --secondary: 258.3 89.5% 66.1%;
-  --secondary-foreground: 222.2 47.4% 1.2%;
 
   --muted: 223 47% 11%;
   --muted-foreground: 215.4 16.3% 65%;
 
-  --accent: 188.7 94.5% 42.7%;
-  --accent-foreground: 222.2 47.4% 1.2%;
+  --accent: 330 80% 60%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --radius: 1rem;
+
+  --app-font-sans: 'Plus Jakarta Sans', sans-serif;
+  --app-font-display: 'Plus Jakarta Sans', sans-serif;
+}
+
+.dark {
+  --background: 224 71% 4%;
+  --foreground: 213 31% 95%;
+  --border: 216 34% 15%;
+  --input: 216 34% 15%;
+  --ring: 263.4 70% 50.4%;
+  
+  --card: 224 50% 7%;
+  --card-foreground: 213 31% 95%;
+  --card-border: 216 34% 15%;
+
+  --popover: 224 50% 7%;
+  --popover-foreground: 213 31% 95%;
+  --popover-border: 216 34% 15%;
+
+  --primary: 263.4 70% 50.4%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 217.2 91.2% 59.8%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 223 47% 11%;
+  --muted-foreground: 215.4 16.3% 65%;
+
+  --accent: 330 80% 60%;
+  --accent-foreground: 210 40% 98%;
 
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
@@ -117,20 +117,28 @@
     @apply border-border;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-[#080C14] text-[#F1F5F9] selection:bg-orange-500/30 selection:text-orange-200;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--app-font-display);
   }
 }
 
-/* Glassmorphism utilities */
+/* Glassmorphism & UI Card utilities */
 .glass {
-  @apply bg-white/5 dark:bg-black/20 backdrop-blur-md border border-white/10 dark:border-white/5;
+  @apply bg-[#0D121F]/80 backdrop-blur-md border border-slate-800/80;
 }
 
 .glass-card {
-  @apply bg-white/60 dark:bg-slate-900/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
+  @apply bg-[#0F1524] border border-slate-800/90 shadow-xl rounded-2xl transition-all duration-300;
+}
+
+.glass-card-hover {
+  @apply bg-[#0F1524] border border-slate-800/90 shadow-xl rounded-2xl hover:border-orange-500/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] transition-all duration-300;
+}
+
+.glass-card-orange {
+  @apply bg-[#0F1524] border border-slate-800/90 shadow-xl rounded-2xl hover:border-orange-500/60 hover:shadow-[0_0_35px_rgba(249,115,22,0.22)] transition-all duration-300;
 }
 
 /* Custom scrollbar */
@@ -138,21 +146,48 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-transparent;
+  background: #080C14;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-muted-foreground/30 rounded-full hover:bg-muted-foreground/50 transition-colors;
+  background: #1E293B;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
 }
 
 /* Text Gradients */
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 font-bold;
+}
+
+.text-gradient-orange {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-400 to-orange-400 font-extrabold;
+}
+
+.text-gradient-pink {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-400 font-bold;
+}
+
+/* Buttons */
+.btn-primary-gradient {
+  @apply bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 bg-[length:200%_auto] text-white font-semibold shadow-[0_0_25px_rgba(249,115,22,0.4)] hover:shadow-[0_0_30px_rgba(249,115,22,0.6)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
+}
+
+.btn-orange-gradient {
+  @apply bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 bg-[length:200%_auto] text-white font-semibold shadow-[0_0_25px_rgba(249,115,22,0.4)] hover:shadow-[0_0_30px_rgba(249,115,22,0.6)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
+}
+
+.btn-dark-secondary {
+  @apply bg-[#141B2D] hover:bg-[#1A243C] text-slate-200 border border-slate-700/70 font-medium transition-all duration-300 hover:border-orange-500/50 hover:text-white hover:scale-[1.02] active:scale-[0.98];
 }
 
 .bg-grid-white {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.03)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
 }
 
 .bg-grid-black {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(0 0 0 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
 }
+
+

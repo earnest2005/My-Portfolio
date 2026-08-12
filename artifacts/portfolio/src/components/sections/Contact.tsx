@@ -45,7 +45,6 @@ export default function Contact() {
       setIsSubmitting(false);
       setIsSuccess(true);
 
-      // Reset after showing success
       setTimeout(() => {
         setIsSuccess(false);
         setFormData({ name: "", email: "", message: "" });
@@ -57,136 +56,165 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative scroll-mt-24">
+    <section id="contact" className="relative scroll-mt-24 py-8">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto"
+        viewport={{ once: true, margin: "-80px" }}
+        className="flex flex-col gap-6"
       >
-        <div className="w-full lg:w-5/12 flex flex-col gap-8">
-          <div className="flex flex-col gap-4">
-            <motion.h2 variants={fadeIn} className="text-3xl md:text-5xl font-display font-bold">
-              Let's <span className="text-gradient">Connect</span>
-            </motion.h2>
-            <motion.p variants={fadeIn} className="text-muted-foreground text-lg">
-              Currently seeking internship opportunities and open to exciting projects. Feel free to reach out!
-            </motion.p>
-          </div>
+        <div className="flex flex-col items-start gap-1">
+          <span className="text-orange-400 text-xs font-bold tracking-wider uppercase">
+            Get In Touch
+          </span>
+          <motion.h2 variants={fadeIn} className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+            Let's <span className="text-orange-500">Connect</span>
+          </motion.h2>
+        </div>
 
-          <motion.div variants={fadeIn} className="flex flex-col gap-6 mt-4">
-            <a href="mailto:earnestabrah@gmail.com" className="flex items-center gap-4 group">
-              <div className="w-12 h-12 rounded-full glass flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                <Mail size={20} />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground font-medium">Email</p>
-                <p className="text-lg font-bold group-hover:text-primary transition-colors">earnestabrah@gmail.com</p>
-              </div>
-            </a>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Left Column Contact Info */}
+          <motion.div variants={fadeIn} className="lg:col-span-5 flex flex-col justify-between gap-6">
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+              Have a project in mind or want to collaborate? Feel free to reach out. I'm always open to discussing new opportunities and ideas.
+            </p>
 
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full glass flex items-center justify-center text-secondary">
-                <MapPin size={20} />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground font-medium">Location</p>
-                <p className="text-lg font-bold">Kulesekaram, Tamil Nadu, India</p>
+            <div className="flex flex-col gap-4">
+              <a href="mailto:earnestabrah@gmail.com" className="flex items-center gap-3.5 p-4 rounded-xl bg-[#0F1524] border border-slate-800/90 group hover:border-orange-500/50 transition-all">
+                <div className="w-10 h-10 rounded-lg bg-[#141B2D] border border-slate-700/60 flex items-center justify-center text-orange-400 shrink-0">
+                  <Mail size={18} />
+                </div>
+                <div>
+                  <span className="text-slate-400 text-xs font-medium block">Email</span>
+                  <span className="text-white text-sm font-semibold group-hover:text-orange-400 transition-colors">
+                    earnestabrah@gmail.com
+                  </span>
+                </div>
+              </a>
+
+              <div className="flex items-center gap-3.5 p-4 rounded-xl bg-[#0F1524] border border-slate-800/90">
+                <div className="w-10 h-10 rounded-lg bg-[#141B2D] border border-slate-700/60 flex items-center justify-center text-amber-400 shrink-0">
+                  <MapPin size={18} />
+                </div>
+                <div>
+                  <span className="text-slate-400 text-xs font-medium block">Location</span>
+                  <span className="text-white text-sm font-semibold">
+                    India
+                  </span>
+                </div>
               </div>
             </div>
-            
-            <div className="flex gap-4 mt-4">
-              <a href="https://github.com/earnest2005" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
-                <Github size={20} />
+
+            <div className="flex items-center gap-3 pt-2">
+              <a 
+                href="https://github.com/earnest2005" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="w-10 h-10 rounded-full bg-[#141B2D] border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-orange-500/50 hover:bg-[#1C253C] transition-all"
+                aria-label="GitHub"
+              >
+                <Github size={18} />
               </a>
-              <a href="https://www.linkedin.com/in/earnest-abraham-622b25335" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
-                <Linkedin size={20} />
+              <a 
+                href="https://www.linkedin.com/in/earnest-abraham-622b25335" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="w-10 h-10 rounded-full bg-[#141B2D] border border-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:border-orange-500/50 hover:bg-[#1C253C] transition-all"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={18} />
               </a>
             </div>
           </motion.div>
-        </div>
 
-        <motion.div variants={fadeIn} className="w-full lg:w-7/12">
-          <div className="glass-card rounded-3xl p-8 relative overflow-hidden">
-            {isSuccess ? (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="absolute inset-0 z-10 bg-background/95 backdrop-blur-sm flex flex-col items-center justify-center text-center p-8 rounded-3xl"
-              >
-                <div className="w-20 h-20 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center mb-6">
-                  <CheckCircle2 size={40} />
-                </div>
-                <h3 className="text-3xl font-display font-bold mb-2">Message Sent!</h3>
-                <p className="text-muted-foreground text-lg">Thank you for reaching out. I'll get back to you as soon as possible.</p>
-              </motion.div>
-            ) : null}
-
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-0">
-              {error ? (
-                <div className="rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
-                  {error}
-                </div>
+          {/* Right Column Form Card */}
+          <motion.div variants={fadeIn} className="lg:col-span-7">
+            <div className="bg-[#0F1524] border border-slate-800/90 rounded-2xl p-6 sm:p-8 relative overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.3)]">
+              {isSuccess ? (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="absolute inset-0 z-10 bg-[#080C14]/95 backdrop-blur-md flex flex-col items-center justify-center text-center p-8 rounded-2xl"
+                >
+                  <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mb-4">
+                    <CheckCircle2 size={32} />
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-white mb-2">Message Sent!</h3>
+                  <p className="text-slate-300 text-sm max-w-sm">Thank you for reaching out. I will get back to you shortly.</p>
+                </motion.div>
               ) : null}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-sm font-medium">Name</label>
-                  <input
-                    id="name"
-                    type="text"
+
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4 relative z-0">
+                {error ? (
+                  <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-xs text-red-300">
+                    {error}
+                  </div>
+                ) : null}
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-1.5">
+                    <label htmlFor="name" className="text-xs font-semibold text-slate-300">Your Name</label>
+                    <input
+                      id="name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      placeholder="John Doe"
+                      className="w-full bg-[#141B2D] border border-slate-700/60 rounded-xl px-4 py-2.5 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-orange-500/80 transition-all"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <label htmlFor="email" className="text-xs font-semibold text-slate-300">Your Email</label>
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      placeholder="john@example.com"
+                      className="w-full bg-[#141B2D] border border-slate-700/60 rounded-xl px-4 py-2.5 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-orange-500/80 transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="message" className="text-xs font-semibold text-slate-300">Message</label>
+                  <textarea
+                    id="message"
                     required
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    placeholder="John Doe"
-                    className="w-full bg-background/50 border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    placeholder="How can we work together?"
+                    className="w-full bg-[#141B2D] border border-slate-700/60 rounded-xl px-4 py-2.5 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-orange-500/80 transition-all resize-none"
                   />
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-sm font-medium">Email</label>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    placeholder="john@example.com"
-                    className="w-full bg-background/50 border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                  />
-                </div>
-              </div>
 
-              <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-sm font-medium">Message</label>
-                <textarea
-                  id="message"
-                  required
-                  rows={5}
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  placeholder="How can we work together?"
-                  className="w-full bg-background/50 border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
-                />
-              </div>
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="btn-orange-gradient rounded-xl px-6 py-3 text-sm font-semibold flex items-center justify-center gap-2 mt-2"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  ) : (
+                    <>
+                      Send Message <Send size={16} />
+                    </>
+                  )}
+                </Button>
+              </form>
+            </div>
+          </motion.div>
 
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full rounded-xl gap-2 mt-2"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                ) : (
-                  <>
-                    Send Message <Send size={18} />
-                  </>
-                )}
-              </Button>
-            </form>
-          </div>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );
 }
+
+

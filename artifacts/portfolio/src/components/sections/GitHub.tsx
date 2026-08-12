@@ -8,7 +8,7 @@ const repos = [
     name: "react-ui-components",
     description: "A collection of highly reusable, accessible React components built with Tailwind CSS.",
     language: "TypeScript",
-    color: "bg-blue-500",
+    color: "bg-orange-500",
     stars: 128,
     forks: 34
   },
@@ -16,7 +16,7 @@ const repos = [
     name: "ml-trading-bot",
     description: "Algorithmic trading bot using reinforcement learning and real-time market data.",
     language: "Python",
-    color: "bg-yellow-500",
+    color: "bg-amber-500",
     stars: 85,
     forks: 12
   },
@@ -24,7 +24,7 @@ const repos = [
     name: "java-enterprise-api",
     description: "Boilerplate for scalable Java Spring Boot REST APIs with JWT authentication.",
     language: "Java",
-    color: "bg-orange-500",
+    color: "bg-orange-400",
     stars: 64,
     forks: 21
   }
@@ -32,83 +32,87 @@ const repos = [
 
 export default function GitHubSection() {
   return (
-    <section id="github" className="relative scroll-mt-24">
+    <section id="github" className="relative scroll-mt-24 py-8">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="flex flex-col gap-12"
+        viewport={{ once: true, margin: "-80px" }}
+        className="flex flex-col gap-6"
       >
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 max-w-5xl mx-auto w-full">
-          <div className="flex flex-col gap-2">
-            <motion.h2 variants={fadeIn} className="text-3xl md:text-5xl font-display font-bold flex items-center gap-4">
-              <Github size={40} className="text-foreground" /> Open <span className="text-gradient">Source</span>
+          <div className="flex flex-col items-start gap-1">
+            <span className="text-orange-400 text-xs font-bold tracking-wider uppercase">
+              Open Source Contributions
+            </span>
+            <motion.h2 variants={fadeIn} className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight flex items-center gap-3">
+              <Github size={36} className="text-orange-500" /> Open <span className="text-orange-500">Source</span>
             </motion.h2>
-            <motion.p variants={fadeIn} className="text-muted-foreground text-lg">
-              Active contributor to the developer community.
-            </motion.p>
           </div>
           <motion.div variants={fadeIn}>
-            <Button variant="outline" className="rounded-full gap-2">
-              <Github size={18} /> Follow on GitHub
-            </Button>
+            <a href="https://github.com/earnest2005" target="_blank" rel="noreferrer">
+              <Button variant="outline" className="rounded-full gap-2 border-slate-700 hover:border-orange-500/60 hover:bg-orange-500/10 text-slate-200 hover:text-white transition-all text-xs font-bold px-5 py-2">
+                <Github size={16} /> Follow on GitHub
+              </Button>
+            </a>
           </motion.div>
         </div>
 
-        <div className="max-w-5xl mx-auto w-full flex flex-col gap-8">
-          {/* Contribution Graph Placeholder */}
-          <motion.div variants={fadeIn} className="glass-card p-6 md:p-8 rounded-3xl w-full overflow-hidden">
-            <h3 className="text-lg font-bold mb-6">1,245 contributions in the last year</h3>
-            <div className="flex gap-1 overflow-x-auto pb-4 custom-scrollbar">
+        <div className="max-w-5xl mx-auto w-full flex flex-col gap-6">
+          {/* Contribution Graph Card */}
+          <motion.div variants={fadeIn} className="bg-[#0F1524] border border-slate-800/90 p-6 rounded-2xl w-full overflow-hidden shadow-[0_0_25px_rgba(0,0,0,0.3)] hover:border-orange-500/50 transition-all duration-300">
+            <h3 className="text-sm font-bold text-slate-200 mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-orange-500" /> 1,245 contributions in the last year
+            </h3>
+            <div className="flex gap-1 overflow-x-auto pb-3 custom-scrollbar">
               {Array.from({ length: 52 }).map((_, colIndex) => (
                 <div key={colIndex} className="flex flex-col gap-1">
                   {Array.from({ length: 7 }).map((_, rowIndex) => {
                     const intensity = Math.random();
-                    let bgColor = "bg-muted";
-                    if (intensity > 0.8) bgColor = "bg-primary";
-                    else if (intensity > 0.6) bgColor = "bg-primary/70";
-                    else if (intensity > 0.4) bgColor = "bg-primary/40";
-                    else if (intensity > 0.2) bgColor = "bg-primary/20";
+                    let bgColor = "bg-[#141B2D]";
+                    if (intensity > 0.8) bgColor = "bg-orange-500";
+                    else if (intensity > 0.6) bgColor = "bg-orange-500/70";
+                    else if (intensity > 0.4) bgColor = "bg-orange-500/40";
+                    else if (intensity > 0.2) bgColor = "bg-orange-500/20";
                     
                     return (
                       <div 
                         key={rowIndex} 
-                        className={`w-3 h-3 rounded-sm ${bgColor} hover:ring-2 hover:ring-foreground transition-all cursor-pointer`}
+                        className={`w-3 h-3 rounded-sm ${bgColor} hover:ring-2 hover:ring-orange-400 transition-all cursor-pointer`}
                       />
                     );
                   })}
                 </div>
               ))}
             </div>
-            <div className="flex items-center justify-end gap-2 text-xs text-muted-foreground mt-4">
+            <div className="flex items-center justify-end gap-2 text-xs text-slate-400 font-medium mt-3">
               <span>Less</span>
-              <div className="w-3 h-3 rounded-sm bg-muted" />
-              <div className="w-3 h-3 rounded-sm bg-primary/20" />
-              <div className="w-3 h-3 rounded-sm bg-primary/40" />
-              <div className="w-3 h-3 rounded-sm bg-primary/70" />
-              <div className="w-3 h-3 rounded-sm bg-primary" />
+              <div className="w-3 h-3 rounded-sm bg-[#141B2D]" />
+              <div className="w-3 h-3 rounded-sm bg-orange-500/20" />
+              <div className="w-3 h-3 rounded-sm bg-orange-500/40" />
+              <div className="w-3 h-3 rounded-sm bg-orange-500/70" />
+              <div className="w-3 h-3 rounded-sm bg-orange-500" />
               <span>More</span>
             </div>
           </motion.div>
 
           {/* Repo Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {repos.map((repo, idx) => (
-              <motion.div key={idx} variants={fadeIn} className="glass-card p-6 rounded-2xl flex flex-col hover:-translate-y-1 transition-transform group cursor-pointer">
-                <div className="flex items-center gap-2 mb-3">
-                  <BookIcon className="text-muted-foreground w-4 h-4" />
-                  <h4 className="font-bold text-primary group-hover:underline truncate">{repo.name}</h4>
+              <motion.div key={idx} variants={fadeIn} className="bg-[#0F1524] border border-slate-800/90 p-5 rounded-2xl flex flex-col hover:border-orange-500/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.15)] transition-all duration-300 group cursor-pointer">
+                <div className="flex items-center gap-2 mb-2">
+                  <BookIcon className="text-slate-400 w-4 h-4" />
+                  <h4 className="font-bold text-white group-hover:text-orange-400 transition-colors text-sm truncate">{repo.name}</h4>
                 </div>
-                <p className="text-sm text-muted-foreground mb-6 flex-1">{repo.description}</p>
-                <div className="flex items-center justify-between text-xs text-muted-foreground font-medium">
+                <p className="text-xs text-slate-400 mb-4 flex-1 line-clamp-2 leading-relaxed">{repo.description}</p>
+                <div className="flex items-center justify-between text-xs text-slate-400 font-medium pt-3 border-t border-slate-800/60">
                   <div className="flex items-center gap-1.5">
-                    <Circle size={10} className={`${repo.color} fill-current`} />
-                    {repo.language}
+                    <Circle size={9} className={`${repo.color} fill-current`} />
+                    <span className="text-slate-300">{repo.language}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><Star size={14} /> {repo.stars}</div>
-                    <div className="flex items-center gap-1"><GitFork size={14} /> {repo.forks}</div>
+                    <div className="flex items-center gap-1 text-slate-300"><Star size={13} className="text-amber-400" /> {repo.stars}</div>
+                    <div className="flex items-center gap-1 text-slate-300"><GitFork size={13} className="text-orange-400" /> {repo.forks}</div>
                   </div>
                 </div>
               </motion.div>
@@ -127,3 +131,4 @@ function BookIcon(props: any) {
     </svg>
   );
 }
+

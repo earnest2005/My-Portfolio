@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import WhatIDo from "@/components/sections/WhatIDo";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import Experience from "@/components/sections/Experience";
@@ -14,13 +15,14 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       <Hero />
-      <div className="container mx-auto px-6 md:px-12 space-y-32 py-24">
+      <div className="container mx-auto px-6 md:px-12 space-y-16 py-12 md:py-16">
         <About />
+        <WhatIDo />
         <Skills />
-        <Experience />
         <Projects />
-        <Certifications />
+        <Experience />
         <Education />
+        <Certifications />
         <Achievements />
         <GitHubSection />
         <ResumeSection />
@@ -29,3 +31,5 @@ export default function Home() {
     </div>
   );
 }
+
+

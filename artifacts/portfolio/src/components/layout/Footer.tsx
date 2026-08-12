@@ -1,5 +1,4 @@
 import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -7,42 +6,63 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full py-12 bg-background border-t border-border mt-24">
+    <footer className="w-full py-8 bg-[#060911] border-t border-slate-800/80 mt-12 text-slate-400">
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex flex-col items-center md:items-start gap-2">
-          <div className="text-2xl font-display font-bold tracking-tight text-foreground flex items-center gap-2.5">
-            <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center text-white text-xs font-bold shadow-lg shadow-primary/30 ring-1 ring-white/20">
-              <span className="relative z-10">EA</span>
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent opacity-60 blur-md -z-10" />
-            </div>
-            <span className="text-gradient">Earnest<span className="text-foreground/70">.dev</span></span>
+        
+        {/* Monogram Brand */}
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 flex items-center justify-center text-white text-xs font-extrabold shadow-md shadow-orange-500/20">
+            EA
           </div>
-          <p className="text-sm text-muted-foreground">
-            Crafting intelligent solutions & elegant interfaces.
-          </p>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <a href="https://github.com/earnest2005" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-            <Github size={20} />
-          </a>
-          <a href="https://www.linkedin.com/in/earnest-abraham-622b25335" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-            <Linkedin size={20} />
-          </a>
-          <a href="mailto:earnestabrah@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
-            <Mail size={20} />
-          </a>
-        </div>
-
-        <div className="flex items-center gap-6">
-          <span className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} All rights reserved.
+          <span className="text-white font-bold text-base tracking-tight">
+            Earnest Abraham
           </span>
-          <Button variant="glass" size="icon" onClick={scrollToTop} className="rounded-full w-10 h-10">
-            <ArrowUp size={18} />
-          </Button>
         </div>
+
+        {/* Social Icons */}
+        <div className="flex items-center gap-4">
+          <a 
+            href="https://github.com/earnest2005" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-slate-400 hover:text-orange-400 transition-colors"
+            aria-label="GitHub"
+          >
+            <Github size={18} />
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/earnest-abraham-622b25335" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-slate-400 hover:text-orange-400 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={18} />
+          </a>
+          <a 
+            href="mailto:earnestabrah@gmail.com" 
+            className="text-slate-400 hover:text-orange-400 transition-colors"
+            aria-label="Email"
+          >
+            <Mail size={18} />
+          </a>
+        </div>
+
+        {/* Copyright & Scroll Top */}
+        <div className="flex items-center gap-4 text-xs">
+          <span>© {new Date().getFullYear()} Earnest Abraham. All rights reserved.</span>
+          <button 
+            onClick={scrollToTop} 
+            className="w-8 h-8 rounded-full bg-[#141B2D] border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-orange-500/50 hover:bg-[#1C253C] transition-all"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp size={15} />
+          </button>
+        </div>
+
       </div>
     </footer>
   );
 }
+
+

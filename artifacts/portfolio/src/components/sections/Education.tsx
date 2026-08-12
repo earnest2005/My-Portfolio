@@ -1,65 +1,79 @@
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, Calendar, BookOpen } from "lucide-react";
 
-const education = [
+const educationList = [
   {
     degree: "B.Tech in Artificial Intelligence & Data Science",
     institution: "St. Xavier's Catholic College of Engineering",
-    duration: "3rd Year · Ongoing",
-    gpa: "AI & DS",
-    icon: <GraduationCap size={24} className="text-primary" />,
-    description: "Currently in the 3rd year of a B.Tech program specializing in Artificial Intelligence and Data Science, building a strong foundation in Java, Python, data analytics, and modern software development."
+    duration: "2022 - 2026",
+    status: "3rd Year · Ongoing",
+    courses: ["Data Structures & Algorithms", "Machine Learning", "Database Management Systems", "Python & Java Programming"]
   }
 ];
 
 export default function Education() {
   return (
-    <section id="education" className="relative scroll-mt-24">
+    <section id="education" className="relative scroll-mt-24 py-8">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="flex flex-col gap-12"
+        viewport={{ once: true, margin: "-80px" }}
+        className="flex flex-col gap-6"
       >
-        <div className="flex flex-col gap-4 text-center max-w-2xl mx-auto">
-          <motion.h2 variants={fadeIn} className="text-3xl md:text-5xl font-display font-bold">
-            Academic <span className="text-gradient">Background</span>
+        <div className="flex flex-col items-start gap-1">
+          <span className="text-orange-400 text-xs font-bold tracking-wider uppercase">
+            Academic Background
+          </span>
+          <motion.h2 variants={fadeIn} className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+            My <span className="text-orange-500">Education</span>
           </motion.h2>
         </div>
 
-        <div className="max-w-4xl mx-auto w-full grid grid-cols-1 gap-8">
-          {education.map((edu, idx) => (
+        <div className="grid grid-cols-1 gap-5">
+          {educationList.map((edu, idx) => (
             <motion.div
               key={idx}
               variants={fadeIn}
-              className="glass-card rounded-3xl p-8 flex flex-col md:flex-row gap-6 items-start relative overflow-hidden group"
+              className="bg-[#0F1524] border border-slate-800/90 rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-orange-500/50 hover:shadow-[0_0_25px_rgba(249,115,22,0.15)]"
             >
-              <div className="absolute top-0 left-0 w-2 h-full bg-primary" />
-              
-              <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center shrink-0 border border-border group-hover:scale-110 transition-transform duration-300">
-                {edu.icon}
+              <div>
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-2 text-orange-400 text-sm font-semibold">
+                    <GraduationCap size={18} />
+                    <span>{edu.institution}</span>
+                  </div>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#141B2D] border border-slate-700/60 text-slate-300 text-xs font-medium">
+                    <Calendar size={13} className="text-amber-400" />
+                    <span>{edu.duration}</span>
+                  </div>
+                </div>
+
+                <h3 className="text-white text-xl font-bold mb-2">
+                  {edu.degree}
+                </h3>
+
+                <span className="inline-block text-orange-400 text-xs font-semibold mb-4 bg-orange-500/10 border border-orange-500/20 px-2.5 py-1 rounded-md">
+                  {edu.status}
+                </span>
               </div>
-              
-              <div className="flex-1">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
-                  <h3 className="text-2xl font-bold">{edu.degree}</h3>
-                  <span className="px-3 py-1 bg-background rounded-full text-sm font-medium border border-border whitespace-nowrap">
-                    {edu.duration}
-                  </span>
+
+              <div className="pt-4 border-t border-slate-800/60">
+                <div className="flex items-center gap-2 text-slate-300 text-xs font-medium mb-3">
+                  <BookOpen size={14} className="text-amber-400" />
+                  <span>Key Coursework</span>
                 </div>
-                
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="text-lg font-medium text-muted-foreground">{edu.institution}</span>
-                  <span className="px-2 py-1 rounded bg-accent/10 text-accent text-sm font-bold">
-                    {edu.gpa}
-                  </span>
+                <div className="flex flex-wrap gap-2">
+                  {edu.courses.map((course) => (
+                    <span
+                      key={course}
+                      className="px-2.5 py-1 rounded-md bg-[#141B2D] border border-slate-700/50 text-slate-300 text-[11px] font-medium"
+                    >
+                      {course}
+                    </span>
+                  ))}
                 </div>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  {edu.description}
-                </p>
               </div>
             </motion.div>
           ))}
@@ -68,3 +82,5 @@ export default function Education() {
     </section>
   );
 }
+
+
