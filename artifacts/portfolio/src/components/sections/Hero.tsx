@@ -18,13 +18,13 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-[90dvh] flex items-center justify-center overflow-hidden pt-20 pb-12">
+    <section id="home" className="relative min-h-[90dvh] flex items-center justify-center overflow-x-clip overflow-y-visible pt-20 pb-12">
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-orange-600/12 rounded-full blur-[150px] pointer-events-none -z-10" />
       <div className="absolute top-1/4 right-10 w-[450px] h-[450px] bg-amber-600/10 rounded-full blur-[130px] pointer-events-none -z-10" />
       
       <div className="container mx-auto px-6 md:px-12 z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12">
           
           {/* Left Column Text Content */}
           <motion.div 
@@ -108,7 +108,7 @@ export default function Hero() {
             </div>
 
             {/* Hero Quick Statistics Bar */}
-            <div className="grid grid-cols-3 gap-4 pt-4 border-t border-slate-800/80 w-full max-w-md">
+            <div className="grid grid-cols-3 gap-4 pt-4 border-t border-slate-800/80 w-full max-w-md mb-2 sm:mb-0">
               {heroStats.map((stat) => (
                 <div key={stat.label} className="flex flex-col items-center lg:items-start">
                   <span className="text-2xl font-extrabold text-white">{stat.value}</span>
@@ -120,17 +120,17 @@ export default function Hero() {
 
           {/* Right Column Profile Image Presentation (Sleek Tech Halo & Clean Presentation) */}
           <motion.div 
-            className="w-full lg:w-[48%] relative flex flex-col items-center justify-center px-4 pt-2 pb-2 mx-auto text-center"
+            className="w-full lg:w-[48%] relative flex flex-col items-center justify-center px-2 sm:px-4 pt-6 sm:pt-2 pb-2 mx-auto text-center mt-6 lg:mt-0"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* 1. AMBIENT RADIAL GLOW (-z-20): Soft ambient orange depth lighting behind figure */}
-            <div className="absolute w-[320px] h-[360px] sm:w-[400px] sm:h-[440px] rounded-full bg-gradient-to-tr from-orange-600/25 via-amber-500/15 to-transparent blur-3xl pointer-events-none -z-20 inset-0 m-auto" />
+            <div className="absolute w-[240px] h-[280px] xs:w-[280px] xs:h-[320px] sm:w-[400px] sm:h-[440px] max-w-full rounded-full bg-gradient-to-tr from-orange-600/25 via-amber-500/15 to-transparent blur-3xl pointer-events-none -z-20 inset-0 m-auto" />
 
             {/* 2. CONCENTRIC TECH ORBIT HALO RING (-z-10): Neat background orbital frame */}
             <svg 
-              className="absolute w-[440px] h-[440px] sm:w-[500px] sm:h-[500px] pointer-events-none -z-10 inset-0 m-auto text-orange-500/35 drop-shadow-[0_0_12px_rgba(249,115,22,0.2)]" 
+              className="absolute w-[270px] h-[270px] xs:w-[320px] xs:h-[320px] sm:w-[440px] sm:h-[440px] lg:w-[500px] lg:h-[500px] max-w-full pointer-events-none -z-10 inset-0 m-auto text-orange-500/35 drop-shadow-[0_0_12px_rgba(249,115,22,0.2)]" 
               viewBox="0 0 400 400" 
               fill="none"
             >
@@ -147,13 +147,13 @@ export default function Hero() {
             </svg>
 
             {/* 3. ISOLATED FOREGROUND SUBJECT CONTAINER (z-20) */}
-            <div className="relative z-20 isolate w-full max-w-[340px] sm:max-w-[400px] mx-auto flex items-center justify-center">
+            <div className="relative z-20 isolate w-full max-w-[260px] xs:max-w-[300px] sm:max-w-[400px] mx-auto flex items-center justify-center">
               
               {/* 3. SUBJECT IMAGE (z-20): Real Alpha PNG Cutout + Soft Drop Shadows + Bottom Fade */}
               <motion.img 
                 src={profileHero} 
                 alt="Earnest Abraham" 
-                className="relative z-20 w-full h-auto max-h-[460px] sm:max-h-[500px] object-contain mx-auto filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] drop-shadow-[0_10px_20px_rgba(249,115,22,0.25)] transition-transform duration-500 ease-out hover:scale-[1.01]"
+                className="relative z-20 w-full h-auto max-h-[350px] xs:max-h-[400px] sm:max-h-[500px] object-contain mx-auto filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] drop-shadow-[0_10px_20px_rgba(249,115,22,0.25)] transition-transform duration-500 ease-out hover:scale-[1.01]"
                 style={{
                   WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 98%)",
                   maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 98%)",
@@ -164,7 +164,7 @@ export default function Hero() {
 
               {/* FLOATING BADGE 1 (z-30): Top-Left (AI & Data Science) */}
               <motion.div 
-                className="absolute top-10 -left-2 sm:-left-6 px-4 py-2 rounded-full bg-[#0B0F19]/90 border border-orange-500/40 text-white text-xs font-semibold shadow-xl backdrop-blur-md flex items-center gap-2 z-30 pointer-events-auto"
+                className="absolute top-2 -left-1 xs:-left-3 sm:top-10 sm:-left-6 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#0B0F19]/90 border border-orange-500/40 text-white text-[11px] sm:text-xs font-semibold shadow-xl backdrop-blur-md flex items-center gap-1.5 sm:gap-2 z-30 pointer-events-auto whitespace-nowrap"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
@@ -176,7 +176,7 @@ export default function Hero() {
 
               {/* FLOATING BADGE 2 (z-30): Bottom-Right (Software & Web Dev) */}
               <motion.div 
-                className="absolute bottom-8 -right-2 sm:-right-6 px-4 py-2 rounded-full bg-[#0B0F19]/90 border border-orange-500/40 text-white text-xs font-semibold shadow-xl backdrop-blur-md flex items-center gap-2 z-30 pointer-events-auto"
+                className="absolute bottom-3 -right-1 xs:-right-3 sm:bottom-8 sm:-right-6 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#0B0F19]/90 border border-orange-500/40 text-white text-[11px] sm:text-xs font-semibold shadow-xl backdrop-blur-md flex items-center gap-1.5 sm:gap-2 z-30 pointer-events-auto whitespace-nowrap"
                 animate={{ y: [0, 5, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               >
