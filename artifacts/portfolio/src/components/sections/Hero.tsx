@@ -128,11 +128,13 @@ export default function Hero() {
             {/* 1. AMBIENT RADIAL GLOW (-z-20): Soft ambient orange depth lighting behind figure */}
             <div className="absolute w-[240px] h-[280px] xs:w-[280px] xs:h-[320px] sm:w-[400px] sm:h-[440px] max-w-full rounded-full bg-gradient-to-tr from-orange-600/25 via-amber-500/15 to-transparent blur-3xl pointer-events-none -z-20 inset-0 m-auto" />
 
-            {/* 2. CONCENTRIC TECH ORBIT HALO RING (-z-10): Neat background orbital frame */}
-            <svg 
+            {/* 2. CONCENTRIC TECH ORBIT HALO RING (-z-10): Rotating background orbital frame */}
+            <motion.svg 
               className="absolute w-[270px] h-[270px] xs:w-[320px] xs:h-[320px] sm:w-[440px] sm:h-[440px] lg:w-[500px] lg:h-[500px] max-w-full pointer-events-none -z-10 inset-0 m-auto text-orange-500/35 drop-shadow-[0_0_12px_rgba(249,115,22,0.2)]" 
               viewBox="0 0 400 400" 
               fill="none"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
             >
               {/* Outer Dashed Orbit Circle */}
               <circle cx="200" cy="200" r="175" stroke="currentColor" strokeWidth="1.2" strokeDasharray="6 6" />
@@ -144,7 +146,7 @@ export default function Hero() {
               <circle cx="375" cy="200" r="3.5" fill="#F97316" className="animate-pulse" />
               <circle cx="200" cy="375" r="3.5" fill="#FBBF24" />
               <circle cx="25" cy="200" r="4" fill="#FBBF24" className="animate-ping" />
-            </svg>
+            </motion.svg>
 
             {/* 3. ISOLATED FOREGROUND SUBJECT CONTAINER (z-20) */}
             <div className="relative z-20 isolate w-full max-w-[260px] xs:max-w-[300px] sm:max-w-[400px] mx-auto flex items-center justify-center">
@@ -155,8 +157,8 @@ export default function Hero() {
                 alt="Earnest Abraham" 
                 className="relative z-20 w-full h-auto max-h-[350px] xs:max-h-[400px] sm:max-h-[500px] object-contain mx-auto filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] drop-shadow-[0_10px_20px_rgba(249,115,22,0.25)] transition-transform duration-500 ease-out hover:scale-[1.01]"
                 style={{
-                  WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 98%)",
-                  maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 98%)",
+                  WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 99%)",
+                  maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 99%)",
                 }}
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}

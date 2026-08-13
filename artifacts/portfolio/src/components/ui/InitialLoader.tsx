@@ -19,7 +19,7 @@ export default function InitialLoader() {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background">
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#080C14]">
       <div className="w-full max-w-xs px-8">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -27,13 +27,13 @@ export default function InitialLoader() {
           transition={{ duration: 0.5 }}
           className="flex justify-between mb-2"
         >
-          <span className="text-sm font-display font-medium text-muted-foreground tracking-wider uppercase">Loading</span>
-          <span className="text-sm font-mono text-primary">{Math.min(progress, 100)}%</span>
+          <span className="text-xs font-display font-bold text-orange-400/80 tracking-widest uppercase">Loading</span>
+          <span className="text-xs font-mono font-bold text-amber-400">{Math.min(progress, 100)}%</span>
         </motion.div>
         
-        <div className="h-1 w-full bg-secondary/20 rounded-full overflow-hidden">
+        <div className="h-1.5 w-full bg-slate-800/80 rounded-full overflow-hidden border border-orange-500/20 shadow-[0_0_10px_rgba(249,115,22,0.1)]">
           <motion.div 
-            className="h-full bg-gradient-to-r from-primary via-secondary to-accent"
+            className="h-full bg-gradient-to-r from-orange-500 via-amber-400 to-orange-600 shadow-[0_0_15px_rgba(249,115,22,0.8)] rounded-full"
             initial={{ width: "0%" }}
             animate={{ width: `${Math.min(progress, 100)}%` }}
             transition={{ ease: "circOut", duration: 0.2 }}
@@ -43,3 +43,4 @@ export default function InitialLoader() {
     </div>
   );
 }
+
