@@ -1,46 +1,62 @@
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import { FaJava } from "react-icons/fa";
-import { SiPython, SiJavascript, SiTypescript, SiMysql, SiHtml5, SiReact, SiTailwindcss, SiVite, SiFirebase, SiNodedotjs, SiGithub, SiPostman, SiPandas, SiNumpy } from "react-icons/si";
-import { FileSpreadsheet, BarChart3, Database, Code, Wrench } from "lucide-react";
+import { 
+  SiC, 
+  SiPython, 
+  SiMysql, 
+  SiHtml5, 
+  SiReact, 
+  SiTailwindcss, 
+  SiVite, 
+  SiFirebase, 
+  SiNodedotjs, 
+  SiGithub, 
+  SiMongodb, 
+  SiEclipseide, 
+  SiPandas, 
+  SiNumpy 
+} from "react-icons/si";
+import { FileSpreadsheet, Database, Sparkles, Code2, BarChart3 } from "lucide-react";
 
 const categories = [
   {
     title: "Programming Languages",
     skills: [
-      { name: "Java", icon: <FaJava className="text-orange-400" /> },
-      { name: "Python", icon: <SiPython className="text-amber-400" /> },
-      { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
-      { name: "TypeScript", icon: <SiTypescript className="text-orange-400" /> },
-      { name: "SQL", icon: <SiMysql className="text-amber-400" /> },
-      { name: "HTML/CSS", icon: <SiHtml5 className="text-orange-500" /> },
+      { name: "C", icon: <SiC className="text-orange-400" /> },
+      { name: "Java", icon: <FaJava className="text-amber-400" /> },
+      { name: "Python", icon: <SiPython className="text-orange-400" /> },
+      { name: "HTML/CSS", icon: <SiHtml5 className="text-amber-400" /> },
+      { name: "SQL", icon: <SiMysql className="text-orange-400" /> },
     ]
   },
   {
     title: "Frontend Development",
     skills: [
       { name: "React.js", icon: <SiReact className="text-amber-400" /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-orange-400" /> },
-      { name: "Vite", icon: <SiVite className="text-amber-400" /> },
-      { name: "Wouter", icon: <Code className="text-orange-400 w-3.5 h-3.5" /> },
-      { name: "shadcn/ui", icon: <Wrench className="text-amber-400 w-3.5 h-3.5" /> },
+      { name: "React Native", icon: <SiReact className="text-orange-400" /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-amber-400" /> },
+      { name: "Vite", icon: <SiVite className="text-orange-400" /> },
     ]
   },
   {
     title: "Backend & Tools",
     skills: [
+      { name: "Node.js", icon: <SiNodedotjs className="text-amber-400" /> },
+      { name: "MongoDB", icon: <SiMongodb className="text-orange-400" /> },
       { name: "Firebase", icon: <SiFirebase className="text-amber-400" /> },
-      { name: "Node.js", icon: <SiNodedotjs className="text-orange-400" /> },
-      { name: "Git & GitHub", icon: <SiGithub className="text-amber-400" /> },
-      { name: "Postman", icon: <SiPostman className="text-orange-400" /> },
+      { name: "Git & GitHub", icon: <SiGithub className="text-orange-400" /> },
+      { name: "VS Code", icon: <Code2 className="text-amber-400 w-3.5 h-3.5" /> },
+      { name: "Eclipse", icon: <SiEclipseide className="text-orange-400" /> },
+      { name: "Antigravity", icon: <Sparkles className="text-amber-400 w-3.5 h-3.5" /> },
     ]
   },
   {
     title: "Data & Analytics",
     skills: [
-      { name: "Pandas", icon: <SiPandas className="text-amber-400" /> },
-      { name: "NumPy", icon: <SiNumpy className="text-orange-400" /> },
-      { name: "Power BI", icon: <BarChart3 className="text-yellow-400 w-3.5 h-3.5" /> },
+      { name: "Pandas", icon: <SiPandas className="text-orange-400" /> },
+      { name: "NumPy", icon: <SiNumpy className="text-amber-400" /> },
+      { name: "Tableau", icon: <BarChart3 className="text-orange-400 w-3.5 h-3.5" /> },
       { name: "Excel", icon: <FileSpreadsheet className="text-amber-400 w-3.5 h-3.5" /> },
       { name: "Data Visualization", icon: <Database className="text-orange-400 w-3.5 h-3.5" /> },
     ]
