@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ArrowRight, Brain, Code2, Download } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowRight, Brain, Code2 } from "lucide-react";
 import profileHero from "@/assets/earnest-hero.png";
 
 const heroStats = [
@@ -59,14 +59,6 @@ export default function Hero() {
                 View My Work
                 <ArrowRight size={17} />
               </Button>
-              <Button 
-                size="lg" 
-                className="btn-dark-secondary rounded-full px-7 py-3 text-sm font-semibold flex items-center gap-2" 
-                onClick={() => scrollTo('#resume')}
-              >
-                Download CV
-                <Download size={16} />
-              </Button>
             </div>
 
             {/* Social Links Row */}
@@ -95,15 +87,6 @@ export default function Hero() {
                 aria-label="Email"
               >
                 <Mail size={17} />
-              </a>
-              <a 
-                href="https://github.com/earnest2005" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="w-9 h-9 rounded-full bg-[#121827] border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-orange-500/60 hover:bg-orange-500/10 transition-all duration-300"
-                aria-label="Dev Projects"
-              >
-                <Code2 size={17} />
               </a>
             </div>
 
